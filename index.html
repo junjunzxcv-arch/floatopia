@@ -4,61 +4,994 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Floatopia Waves</title>
+    <title>Floatopia Waves | Floating Cottage in Samal Island</title>
+
+    <meta
+        name="description"
+        content="Floatopia Waves Floating Cottage in Samal Island. Chill, swim, explore and make unforgettable memories."
+    >
 
     <style>
-        body {
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #eafaff;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
             color: #173f4f;
+            background: #f5fdff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        section {
+            padding: 70px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
             text-align: center;
+            margin-bottom: 45px;
         }
 
-        .hero {
-            padding: 100px 20px;
-            background: linear-gradient(
-                rgba(255,255,255,0.75),
-                rgba(255,255,255,0.75)
-            );
-        }
-
-        h1 {
-            font-size: 48px;
+        .section-title h2 {
+            font-size: 36px;
             margin-bottom: 10px;
         }
 
-        p {
-            font-size: 20px;
+        .section-title p {
+            color: #5d7b85;
+            max-width: 600px;
+            margin: auto;
         }
 
-        .button {
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .btn {
             display: inline-block;
-            margin-top: 25px;
-            padding: 15px 25px;
-            background: #2a9d8f;
-            color: white;
-            text-decoration: none;
+            padding: 14px 24px;
             border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin: 5px;
         }
+
+        .btn-primary {
+            background: #159a9c;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #117b7d;
+            transform: translateY(-2px);
+        }
+
+        .btn-light {
+            background: white;
+            color: #159a9c;
+        }
+
+        .btn-light:hover {
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            padding: 15px 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: #159a9c;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #173f4f;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #159a9c;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #c9f5ff,
+                    #e8fff7
+                );
+
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 80px);
+            line-height: 1;
+            margin-bottom: 20px;
+            color: #116b7a;
+        }
+
+        .hero h1 span {
+            color: #159a9c;
+        }
+
+        .hero p {
+            font-size: 22px;
+            color: #456c77;
+            margin-bottom: 25px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.7);
+            padding: 8px 16px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: #56727b;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features {
+            background: #eefcff;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: #69818a;
+            font-size: 14px;
+        }
+
+        /* =========================
+           PACKAGES
+        ========================= */
+
+        .packages {
+            background: white;
+        }
+
+        .package-card {
+            max-width: 500px;
+            margin: auto;
+            background: #f0fbfc;
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            border: 2px solid #d8f3f3;
+        }
+
+        .package-card h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 40px;
+            font-weight: bold;
+            color: #159a9c;
+            margin-bottom: 20px;
+        }
+
+        .package-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .package-list li {
+            padding: 7px;
+        }
+
+        /* =========================
+           AVAILABILITY
+        ========================= */
+
+        .availability {
+            background: #e7faff;
+            text-align: center;
+        }
+
+        .calendar-box {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .calendar-placeholder {
+            padding: 50px 20px;
+            border: 2px dashed #9edce0;
+            border-radius: 15px;
+            color: #5b7b83;
+            margin-bottom: 20px;
+        }
+
+        .legend {
+            margin: 15px 0;
+        }
+
+        .available {
+            color: #159a9c;
+            font-weight: bold;
+        }
+
+        .booked {
+            color: #d95c5c;
+            font-weight: bold;
+        }
+
+        /* =========================
+           GALLERY PLACEHOLDERS
+        ========================= */
+
+        .gallery {
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 220px;
+            border-radius: 15px;
+            background: linear-gradient(
+                135deg,
+                #c8f2fa,
+                #dff9ed
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5b8790;
+            font-weight: bold;
+        }
+
+        /* =========================
+           REVIEWS
+        ========================= */
+
+        .reviews {
+            background: #eefcff;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .review {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+        }
+
+        .stars {
+            margin-bottom: 10px;
+        }
+
+        .review p {
+            color: #617b82;
+            font-size: 15px;
+        }
+
+        /* =========================
+           LOCATION
+        ========================= */
+
+        .location {
+            background: white;
+            text-align: center;
+        }
+
+        .location-box {
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            background: #f1fbfc;
+            border-radius: 20px;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            background: linear-gradient(
+                135deg,
+                #159a9c,
+                #52bda3
+            );
+
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #123b48;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .feature-grid,
+            .gallery-grid,
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            section {
+                padding: 55px 18px;
+            }
+
+        }
+
     </style>
 </head>
 
 <body>
 
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <div class="nav-container">
+
+            <div class="logo">
+                FLOATOPIA WAVES 🌊
+            </div>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#features">Experience</a>
+                <a href="#packages">Rates</a>
+                <a href="#availability">Availability</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
     <section class="hero">
 
-        <h1>FLOATOPIA WAVES 🌊</h1>
+        <div class="hero-content">
 
-        <p>
-            Good vibes. Clear waters. Better memories.
-        </p>
+            <div class="hero-tag">
+                SAMAL ISLAND • DAVAO
+            </div>
 
-        <a class="button" href="#">
-            CHECK AVAILABILITY
-        </a>
+            <h1>
+                FLOATOPIA<br>
+                <span>WAVES</span>
+            </h1>
+
+            <p>
+                Good vibes. Clear waters. Better memories. 🌊
+            </p>
+
+            <a href="#availability" class="btn btn-primary">
+                CHECK AVAILABILITY
+            </a>
+
+            <a href="#contact" class="btn btn-light">
+                BOOK NOW
+            </a>
+
+        </div>
 
     </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about" id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Your Floating Escape 🌴</h2>
+
+                <p>
+                    A chill day on the water with your favorite people.
+                </p>
+
+            </div>
+
+            <div class="about-content">
+
+                <p>
+                    Welcome to Floatopia Waves, your floating cottage
+                    experience in Samal Island.
+                </p>
+
+                <p>
+                    Whether you're here to swim, relax, explore,
+                    celebrate, or simply enjoy good vibes with your
+                    friends and family, Floatopia is ready for you.
+                </p>
+
+                <p>
+                    Chill. Swim. Explore. Repeat. 💙
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURES
+    ========================= -->
+
+    <section class="features" id="features">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>What's Waiting For You?</h2>
+
+                <p>
+                    Make your Floatopia day even more fun.
+                </p>
+
+            </div>
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">🏊</div>
+
+                    <h3>Mini Pool</h3>
+
+                    <p>
+                        Cool down and enjoy the water right on the cottage.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">🌊</div>
+
+                    <h3>Water Slide</h3>
+
+                    <p>
+                        Because a floating cottage needs a slide. 😎
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">🤿</div>
+
+                    <h3>Snorkeling</h3>
+
+                    <p>
+                        Explore what's hiding underneath the clear waters.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">🏄</div>
+
+                    <h3>Paddle Board</h3>
+
+                    <p>
+                        Cruise around and enjoy the water at your own pace.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">🚁</div>
+
+                    <h3>Drone Shots</h3>
+
+                    <p>
+                        Capture your Floatopia memories from above.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">🚿</div>
+
+                    <h3>Clean CR</h3>
+
+                    <p>
+                        Because comfort matters, even on the water.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PACKAGES
+    ========================= -->
+
+    <section class="packages" id="packages">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Packages & Rates 💰</h2>
+
+                <p>
+                    Simple, fun, and made for a good day out.
+                </p>
+
+            </div>
+
+
+            <div class="package-card">
+
+                <h3>Floatopia Experience</h3>
+
+                <div class="price">
+                    ₱X,XXX
+                </div>
+
+                <ul class="package-list">
+
+                    <li>✓ Floating Cottage</li>
+                    <li>✓ Mini Pool</li>
+                    <li>✓ Water Slide</li>
+                    <li>✓ Clean CR</li>
+                    <li>✓ Basic Cottage Amenities</li>
+
+                </ul>
+
+                <a href="#contact" class="btn btn-primary">
+                    INQUIRE NOW
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         AVAILABILITY
+    ========================= -->
+
+    <section class="availability" id="availability">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Check Availability 📅</h2>
+
+                <p>
+                    Planning your Floatopia day? Check the calendar first.
+                </p>
+
+            </div>
+
+
+            <div class="calendar-box">
+
+                <div class="calendar-placeholder">
+
+                    <h3>Floatopia Availability Calendar</h3>
+
+                    <p>
+                        Your interactive availability calendar
+                        will be connected here.
+                    </p>
+
+                </div>
+
+
+                <div class="legend">
+
+                    <span class="available">
+                        🟢 Available
+                    </span>
+
+                    &nbsp;&nbsp;
+
+                    <span class="booked">
+                        🔴 Booked
+                    </span>
+
+                </div>
+
+
+                <a href="#" class="btn btn-primary">
+                    VIEW FULL CALENDAR
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY
+    ========================= -->
+
+    <section class="gallery">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Floatopia Moments 📸</h2>
+
+                <p>
+                    Photos from your next favorite day out.
+                </p>
+
+            </div>
+
+
+            <div class="gallery-grid">
+
+                <div class="gallery-item">
+                    FLOATOPIA PHOTO
+                </div>
+
+                <div class="gallery-item">
+                    FLOATOPIA PHOTO
+                </div>
+
+                <div class="gallery-item">
+                    FLOATOPIA PHOTO
+                </div>
+
+                <div class="gallery-item">
+                    FLOATOPIA PHOTO
+                </div>
+
+                <div class="gallery-item">
+                    FLOATOPIA PHOTO
+                </div>
+
+                <div class="gallery-item">
+                    FLOATOPIA PHOTO
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         REVIEWS
+    ========================= -->
+
+    <section class="reviews">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Good Vibes From Our Guests 💙</h2>
+
+                <p>
+                    Nothing beats hearing from people who experienced Floatopia.
+                </p>
+
+            </div>
+
+
+            <div class="review-grid">
+
+                <div class="review">
+
+                    <div class="stars">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <p>
+                        "Such a fun place to relax and bond with friends!"
+                    </p>
+
+                </div>
+
+
+                <div class="review">
+
+                    <div class="stars">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <p>
+                        "The water slide and snorkeling made the day even better!"
+                    </p>
+
+                </div>
+
+
+                <div class="review">
+
+                    <div class="stars">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <p>
+                        "Perfect place for a chill day in Samal."
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LOCATION
+    ========================= -->
+
+    <section class="location">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Where To Find Us 📍</h2>
+
+            </div>
+
+
+            <div class="location-box">
+
+                <h3>Floatopia Waves</h3>
+
+                <p>
+                    Samal Island, Davao
+                </p>
+
+                <br>
+
+                <a href="#" class="btn btn-primary">
+                    GET DIRECTIONS
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL CTA
+    ========================= -->
+
+    <section class="cta" id="contact">
+
+        <div class="container">
+
+            <h2>Ready for some good vibes? 🌊</h2>
+
+            <p>
+                Check the date, bring your people, and let's Floatopia!
+            </p>
+
+            <a href="#" class="btn btn-light">
+                MESSAGE US ON FACEBOOK
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Floatopia Waves. All rights reserved.
+        </p>
+
+        <p>
+            Samal Island, Davao 🌊
+        </p>
+
+    </footer>
 
 </body>
 </html>
