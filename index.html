@@ -18,7 +18,53 @@
     /* =========================
        GENERAL
     ========================= */
+.menu-toggle {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 28px;
+    color: #159a9c;
+    cursor: pointer;
+    padding: 5px;
+}
 
+@media (max-width: 768px) {
+    .nav-container {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 20px 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        border-radius: 0 0 15px 15px;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 13px 0;
+        border-bottom: 1px solid #eef5f5;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+}
     * {
         margin: 0;
         padding: 0;
@@ -661,27 +707,22 @@
 
 <nav>
 
-    <div class="nav-container">
+<div class="nav-container">
+    <div class="logo">FLOATOPIA WAVES</div>
 
-        <div class="logo">
-            FLOATOPIA WAVES 🌊
-        </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        ☰
+    </button>
 
-        <div class="nav-links">
-
-            <a href="#about">About</a>
-
-            <a href="#features">Experience</a>
-
-            <a href="#packages">Rates</a>
-
-            <a href="#availability">Availability</a>
-
-            <a href="#location">Location</a>
-
-        </div>
-
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#rates">Rates</a>
+        <a href="#availability">Availability</a>
+        <a href="#location">Location</a>
+        <a href="https://m.me/floatopiawaves" target="_blank">Book Now</a>
     </div>
+</div>
 
 </nav>
 
