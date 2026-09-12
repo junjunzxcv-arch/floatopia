@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Floatopia Waves | Floating Cottage in Samal Island</title>
+  <title>Floatopia Waves | Floating Cottage in Samal</title>
 
-  <meta name="description" content="Floatopia Waves Floating Cottage in Samal Island. Swim, chill, bond, and make better memories.">
+  <meta
+    name="description"
+    content="Floatopia Waves Floating Cottage in Samal Island. Swim, chill, sing, explore and make memories with your favorite people."
+  >
 
   <style>
 
     :root {
       --ocean: #075E68;
+      --ocean-dark: #064A52;
       --teal: #159A9C;
       --aqua: #EAF9F8;
       --green: #5F9B72;
       --white: #FFFFFF;
       --text: #164F56;
       --muted: #6A7D81;
-      --border: rgba(7, 94, 104, 0.10);
+      --border: #DDEDEC;
       --shadow: 0 12px 35px rgba(7, 94, 104, 0.10);
       --radius: 22px;
     }
@@ -38,11 +42,7 @@
       color: var(--text);
       background: var(--white);
       line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+      overflow-x: hidden;
     }
 
     img {
@@ -50,40 +50,47 @@
       display: block;
     }
 
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    section {
-      padding: 90px 0;
-      position: relative;
+    button {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
     }
 
     /* =========================
        NAVIGATION
     ========================= */
 
-    header {
+    nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.94);
+      background: rgba(255,255,255,0.96);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(221,237,236,0.8);
     }
 
-    .nav {
-      min-height: 72px;
+    .nav-inner {
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 25px;
     }
 
     .logo {
-      font-size: 21px;
-      font-weight: 900;
+      font-size: 1.25rem;
+      font-weight: 800;
       color: var(--ocean);
+      letter-spacing: -0.5px;
+      white-space: nowrap;
     }
 
     .logo span {
@@ -93,13 +100,14 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 27px;
-      font-size: 14px;
-      font-weight: 700;
+      gap: 28px;
+      font-size: 0.92rem;
+      font-weight: 600;
     }
 
     .nav-links a {
-      transition: 0.2s ease;
+      color: var(--text);
+      transition: color 0.25s ease;
     }
 
     .nav-links a:hover {
@@ -109,66 +117,21 @@
     .nav-book {
       background: var(--ocean);
       color: white !important;
-      padding: 11px 19px;
-      border-radius: 50px;
+      padding: 11px 18px;
+      border-radius: 999px;
     }
 
     .nav-book:hover {
       background: var(--teal);
-      transform: translateY(-2px);
     }
 
-    .menu-btn {
+    .menu-toggle {
       display: none;
       border: 0;
-      background: var(--aqua);
+      background: transparent;
+      font-size: 1.7rem;
       color: var(--ocean);
-      font-size: 24px;
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
       cursor: pointer;
-    }
-
-    /* =========================
-       BUTTONS
-    ========================= */
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 7px;
-      padding: 14px 23px;
-      border-radius: 50px;
-      font-size: 14px;
-      font-weight: 800;
-      transition: 0.25s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--ocean);
-      color: white;
-      box-shadow: 0 10px 25px rgba(7, 94, 104, 0.18);
-    }
-
-    .btn-primary:hover {
-      background: var(--teal);
-      transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(7, 94, 104, 0.22);
-    }
-
-    .btn-outline {
-      background: white;
-      color: var(--ocean);
-      border: 1px solid rgba(7, 94, 104, 0.16);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--teal);
-      color: var(--teal);
-      transform: translateY(-3px);
     }
 
     /* =========================
@@ -176,144 +139,167 @@
     ========================= */
 
     .hero {
-      background:
-        radial-gradient(circle at 10% 15%, rgba(95, 155, 114, 0.10), transparent 28%),
-        linear-gradient(180deg, #ffffff 0%, var(--aqua) 100%);
-      padding: 55px 0 75px;
+      padding: 55px 0 65px;
+      background: var(--white);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: 1.05fr 0.95fr;
       align-items: center;
       gap: 55px;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
+    .hero-image {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      animation: fadeUp 0.8s ease both;
     }
 
-    .hero-badge {
-      display: inline-flex;
-      background: var(--aqua);
-      color: var(--ocean);
-      border: 1px solid rgba(7, 94, 104, 0.08);
-      padding: 8px 14px;
-      border-radius: 50px;
-      font-size: 12px;
+    .hero-image img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .hero-image:hover img {
+      transform: scale(1.025);
+    }
+
+    .eyebrow {
+      color: var(--teal);
+      font-size: 0.82rem;
       font-weight: 800;
-      letter-spacing: 0.5px;
-      margin-bottom: 20px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
     }
 
     .hero h1 {
-      font-size: clamp(45px, 6vw, 70px);
+      font-size: clamp(2.8rem, 6vw, 5rem);
       line-height: 0.98;
-      letter-spacing: -2.8px;
+      letter-spacing: -3px;
       color: var(--ocean);
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
-    .hero h1 span {
-      color: var(--teal);
-    }
-
-    .hero-description {
-      font-size: 18px;
+    .hero-text {
+      font-size: 1.08rem;
       color: var(--muted);
       max-width: 520px;
-      margin-bottom: 25px;
-    }
-
-    .hero-price {
-      margin-bottom: 18px;
-    }
-
-    .hero-price strong {
-      font-size: 38px;
-      color: var(--ocean);
-    }
-
-    .hero-price span {
-      font-size: 13px;
-      color: var(--muted);
-      margin-left: 5px;
-    }
-
-    .hero-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
       margin-bottom: 27px;
     }
 
-    .info-pill {
-      background: white;
-      border: 1px solid var(--border);
-      padding: 8px 12px;
-      border-radius: 50px;
-      font-size: 12px;
+    .hero-price {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--ocean);
+      margin-bottom: 5px;
+    }
+
+    .hero-price small {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .hero-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 28px;
+    }
+
+    .hero-detail {
+      background: var(--aqua);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-size: 0.86rem;
       font-weight: 700;
-      box-shadow: 0 5px 15px rgba(7, 94, 104, 0.05);
     }
 
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
+      padding: 13px 21px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 2px solid transparent;
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: var(--ocean);
+      color: white;
+      box-shadow: 0 8px 20px rgba(7,94,104,0.16);
+    }
+
+    .btn-primary:hover {
+      background: var(--teal);
+    }
+
+    .btn-secondary {
+      background: white;
+      border-color: var(--ocean);
+      color: var(--ocean);
+    }
+
+    .btn-secondary:hover {
+      background: var(--aqua);
     }
 
     .deposit-note {
-      font-size: 12px;
+      font-size: 0.84rem;
       color: var(--muted);
-      margin-top: 13px;
-    }
-
-    .hero-photo {
-      position: relative;
-    }
-
-    .hero-photo::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      right: -16px;
-      bottom: -16px;
-      background: var(--green);
-      opacity: 0.14;
-      border-radius: 30px;
-    }
-
-    .hero-photo img {
-      position: relative;
-      width: 100%;
-      max-height: 600px;
-      object-fit: contain;
-      border-radius: 28px;
-      box-shadow: 0 25px 60px rgba(7, 94, 104, 0.17);
+      margin-top: 14px;
     }
 
     /* =========================
-       VIBES STRIP
+       GOOD VIBES STRIP
     ========================= */
 
-    .vibes {
+    .vibes-strip {
       background: var(--ocean);
       color: white;
-      padding: 17px 0;
+      padding: 20px 0;
     }
 
-    .vibes-inner {
+    .vibes-list {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px 27px;
-      font-size: 12px;
+      gap: 13px 25px;
       font-weight: 800;
-      letter-spacing: 0.5px;
+      font-size: 0.83rem;
+      letter-spacing: 1px;
+    }
+
+    .vibes-list span::after {
+      content: "•";
+      margin-left: 25px;
+      opacity: 0.55;
+    }
+
+    .vibes-list span:last-child::after {
+      display: none;
     }
 
     /* =========================
@@ -321,22 +307,18 @@
     ========================= */
 
     .quick-info {
-      padding: 28px 0;
       background: white;
+      border-bottom: 1px solid var(--border);
     }
 
     .quick-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(7, 94, 104, 0.05);
     }
 
     .quick-item {
+      padding: 24px 15px;
       text-align: center;
-      padding: 20px 10px;
       border-right: 1px solid var(--border);
     }
 
@@ -347,511 +329,587 @@
     .quick-item strong {
       display: block;
       color: var(--ocean);
-      font-size: 19px;
+      font-size: 1.05rem;
+      margin-bottom: 3px;
     }
 
     .quick-item span {
-      font-size: 11px;
+      font-size: 0.82rem;
       color: var(--muted);
     }
 
     /* =========================
-       SECTION TITLES
+       GENERAL SECTIONS
     ========================= */
 
-    .section-title {
+    section {
+      padding: 90px 0;
+    }
+
+    .section-aqua {
+      background: var(--aqua);
+    }
+
+    .section-heading {
       text-align: center;
-      margin-bottom: 45px;
+      max-width: 720px;
+      margin: 0 auto 48px;
     }
 
-    .section-title .eyebrow {
-      color: var(--green);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .section-title h2 {
+    .section-heading h2 {
       color: var(--ocean);
-      font-size: clamp(30px, 5vw, 45px);
-      line-height: 1.1;
-      margin-bottom: 12px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      margin-bottom: 13px;
     }
 
-    .section-title p {
-      max-width: 650px;
-      margin: auto;
+    .section-heading p {
       color: var(--muted);
+      font-size: 1rem;
     }
 
     /* =========================
        ABOUT
     ========================= */
 
-    .about {
-      background: white;
-    }
-
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 65px;
       align-items: center;
     }
 
-    .about-copy .eyebrow {
-      color: var(--green);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 1.5px;
-      margin-bottom: 9px;
-    }
-
-    .about-copy h2 {
-      color: var(--ocean);
-      font-size: clamp(31px, 5vw, 46px);
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-
-    .about-copy p {
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-
-    .about-highlight {
-      margin-top: 24px;
-      padding: 17px 19px;
+    .about-box {
       background: var(--aqua);
-      border-left: 4px solid var(--green);
-      border-radius: 0 14px 14px 0;
-      color: var(--ocean);
-      font-weight: 800;
-    }
-
-    .about-card {
-      background: var(--aqua);
-      border-radius: 30px;
-      padding: 50px 35px;
+      border-radius: 28px;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 35px;
       text-align: center;
     }
 
-    .about-card-icon {
-      font-size: 65px;
-      margin-bottom: 10px;
+    .about-box-inner {
+      max-width: 330px;
     }
 
-    .about-card h3 {
+    .about-box-icon {
+      font-size: 4rem;
+      margin-bottom: 18px;
+    }
+
+    .about-box h3 {
+      font-size: 1.7rem;
       color: var(--ocean);
-      font-size: 27px;
       margin-bottom: 8px;
     }
 
-    .about-card p {
+    .about-content h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      color: var(--ocean);
+      margin-bottom: 20px;
+      letter-spacing: -1.5px;
+    }
+
+    .about-content p {
       color: var(--muted);
-      max-width: 350px;
-      margin: auto;
+      margin-bottom: 15px;
     }
 
     /* =========================
        AMENITIES
     ========================= */
 
-    .amenities {
-      background: var(--aqua);
-    }
-
-    .amenity-grid {
+    .amenities-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    .amenity {
+    .amenity-card {
       background: white;
-      padding: 30px;
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border-top: 4px solid var(--teal);
-      transition: 0.25s ease;
+      padding: 32px 25px;
+      box-shadow: 0 8px 25px rgba(7,94,104,0.06);
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
     }
 
-    .amenity:hover {
-      transform: translateY(-6px);
+    .amenity-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
     }
 
     .amenity-icon {
-      font-size: 38px;
-      margin-bottom: 13px;
+      font-size: 2.3rem;
+      margin-bottom: 18px;
     }
 
-    .amenity h3 {
+    .amenity-card h3 {
       color: var(--ocean);
-      font-size: 21px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
-    .amenity p {
+    .amenity-card p {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 0.92rem;
     }
 
     /* =========================
-       RENTALS
+       OPTIONAL RENTALS
     ========================= */
 
-    .rentals {
-      background: white;
-    }
-
-    .rental-grid {
+    .rentals-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 14px;
+      gap: 15px;
     }
 
-    .rental {
+    .rental-card {
       border: 1px solid var(--border);
       border-radius: 18px;
-      padding: 23px 13px;
-      text-align: center;
-      transition: 0.25s ease;
+      padding: 23px 17px;
+      background: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .rental:hover {
-      border-color: rgba(21, 154, 156, 0.35);
-      transform: translateY(-4px);
+    .rental-card:hover {
+      transform: translateY(-5px);
       box-shadow: var(--shadow);
     }
 
     .rental-icon {
-      font-size: 31px;
-      margin-bottom: 8px;
+      font-size: 1.9rem;
+      margin-bottom: 13px;
     }
 
-    .rental h3 {
+    .rental-card h3 {
+      font-size: 0.98rem;
       color: var(--ocean);
-      font-size: 14px;
-      margin-bottom: 8px;
+      margin-bottom: 5px;
     }
 
     .rental-price {
-      display: inline-block;
-      background: var(--aqua);
-      color: var(--ocean);
-      padding: 5px 9px;
-      border-radius: 50px;
-      font-size: 12px;
-      font-weight: 900;
+      font-weight: 800;
+      color: var(--teal);
     }
 
-    .rental small {
-      display: block;
-      margin-top: 6px;
+    .rental-card p {
       color: var(--muted);
-      font-size: 10px;
+      font-size: 0.78rem;
+      margin-top: 5px;
     }
 
     /* =========================
-       RATE
+       WHAT YOUR DAY LOOKS LIKE
+       ========================= */
+
+    .day-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .day-card {
+      background: white;
+      border-radius: 22px;
+      padding: 28px 22px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .day-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .day-number {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--teal);
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+
+    .day-card h3 {
+      color: var(--ocean);
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .day-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       PERFECT FOR
     ========================= */
 
-    .rate-section {
-      background: var(--aqua);
+    .perfect-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
     }
 
-    .rate-card {
+    .perfect-card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px 17px;
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease;
+    }
+
+    .perfect-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .perfect-card .emoji {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .perfect-card h3 {
+      color: var(--ocean);
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .perfect-card p {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    /* =========================
+       PRICING
+    ========================= */
+
+    .price-wrap {
       max-width: 760px;
       margin: auto;
+    }
+
+    .price-card {
       background: white;
-      border-radius: 30px;
+      border-radius: 28px;
       padding: 45px;
       text-align: center;
-      box-shadow: 0 20px 50px rgba(7, 94, 104, 0.12);
-      border: 1px solid rgba(7, 94, 104, 0.06);
+      box-shadow: var(--shadow);
     }
 
-    .rate-card-label {
-      color: var(--green);
+    .price-label {
+      color: var(--teal);
+      font-weight: 800;
       text-transform: uppercase;
-      font-size: 12px;
-      font-weight: 900;
       letter-spacing: 1.5px;
+      font-size: 0.78rem;
     }
 
-    .rate-price {
-      color: var(--ocean);
-      font-size: clamp(58px, 9vw, 80px);
+    .big-price {
+      font-size: clamp(3.4rem, 8vw, 5.5rem);
       font-weight: 900;
+      color: var(--ocean);
       line-height: 1;
       margin: 12px 0;
     }
 
-    .rate-card h3 {
-      color: var(--ocean);
-      font-size: 24px;
-      margin-bottom: 6px;
-    }
-
-    .rate-card > p {
+    .price-sub {
       color: var(--muted);
-      margin-bottom: 22px;
-    }
-
-    .rate-details {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
       margin-bottom: 25px;
     }
 
-    .rate-detail {
+    .price-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      text-align: left;
+      margin: 25px 0;
+    }
+
+    .price-feature {
       background: var(--aqua);
+      border-radius: 12px;
+      padding: 11px 14px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .per-person {
+      margin-top: 30px;
+      padding-top: 27px;
+      border-top: 1px solid var(--border);
+    }
+
+    .per-person h3 {
       color: var(--ocean);
-      padding: 8px 12px;
-      border-radius: 50px;
-      font-size: 12px;
-      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .per-person p {
+      color: var(--muted);
+      font-size: 0.87rem;
+    }
+
+    .per-person-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 17px;
+    }
+
+    .per-person-item {
+      background: #F7FCFC;
+      border: 1px solid var(--border);
+      padding: 13px 8px;
+      border-radius: 12px;
+    }
+
+    .per-person-item strong {
+      display: block;
+      color: var(--ocean);
+      font-size: 1.15rem;
+    }
+
+    .per-person-item span {
+      color: var(--muted);
+      font-size: 0.75rem;
     }
 
     /* =========================
        AVAILABILITY
     ========================= */
 
-    .availability {
-      background: white;
+    .availability-content {
       text-align: center;
-    }
-
-    .availability-card {
-      max-width: 780px;
+      max-width: 680px;
       margin: auto;
-      padding: 45px 30px;
-      background: var(--aqua);
-      border-radius: 28px;
     }
 
-    .availability-icon {
-      font-size: 48px;
-      margin-bottom: 8px;
+    .calendar-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
     }
 
-    .availability-card h3 {
+    .availability-content h2 {
       color: var(--ocean);
-      font-size: 27px;
-      margin-bottom: 8px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 13px;
     }
 
-    .availability-card p {
+    .availability-content p {
       color: var(--muted);
-      margin-bottom: 23px;
+      margin-bottom: 25px;
     }
 
     /* =========================
        HOW TO BOOK
     ========================= */
 
-    .booking {
-      background: var(--aqua);
-    }
-
-    .booking-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .booking-header .eyebrow {
-      color: var(--green);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .booking-header h2 {
-      color: var(--ocean);
-      font-size: clamp(32px, 5vw, 46px);
-      margin-bottom: 8px;
-    }
-
-    .booking-header p {
-      color: var(--muted);
-    }
-
-    .booking-steps {
+    .booking-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      position: relative;
+      gap: 18px;
     }
 
-    .booking-step {
+    .booking-card {
       background: white;
       border-radius: 22px;
-      padding: 27px 18px;
+      padding: 28px 20px;
       text-align: center;
-      box-shadow: 0 8px 25px rgba(7, 94, 104, 0.07);
-      position: relative;
-      border: 1px solid rgba(7, 94, 104, 0.06);
+      border: 1px solid var(--border);
     }
 
-    .booking-step-number {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--ocean);
-      color: white;
+    .booking-number {
+      width: 42px;
+      height: 42px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 13px;
-      font-weight: 900;
-      font-size: 13px;
-    }
-
-    .booking-step-icon {
-      font-size: 33px;
-      margin-bottom: 9px;
-    }
-
-    .booking-step h3 {
-      color: var(--ocean);
-      font-size: 16px;
-      margin-bottom: 6px;
-    }
-
-    .booking-step p {
-      color: var(--muted);
-      font-size: 12px;
-      min-height: 58px;
-    }
-
-    .step-button {
-      display: inline-flex;
-      margin-top: 14px;
-      padding: 9px 13px;
-      background: var(--teal);
-      color: white;
-      border-radius: 50px;
-      font-size: 11px;
-      font-weight: 800;
-      transition: 0.2s ease;
-    }
-
-    .step-button:hover {
+      margin: 0 auto 16px;
+      border-radius: 50%;
       background: var(--ocean);
-      transform: translateY(-2px);
+      color: white;
+      font-weight: 800;
+    }
+
+    .booking-card h3 {
+      color: var(--ocean);
+      margin-bottom: 7px;
+    }
+
+    .booking-card p {
+      color: var(--muted);
+      font-size: 0.87rem;
+      margin-bottom: 15px;
+    }
+
+    .booking-card .btn {
+      min-height: 42px;
+      padding: 9px 15px;
+      font-size: 0.8rem;
     }
 
     .booking-note {
       text-align: center;
-      margin-top: 25px;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 0.86rem;
+      margin-top: 25px;
+    }
+
+    /* =========================
+       SIGNATURE FLOATOPIA VIBE
+    ========================= */
+
+    .signature {
+      background: var(--ocean);
+      color: white;
+      text-align: center;
+      padding: 95px 20px;
+    }
+
+    .signature-inner {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .signature-small {
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-bottom: 15px;
+    }
+
+    .signature h2 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      margin-bottom: 25px;
+    }
+
+    .signature-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      opacity: 0.9;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .signature-vibes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .signature-vibes span {
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 0.82rem;
     }
 
     /* =========================
        GALLERY
     ========================= */
 
-    .gallery {
-      background: white;
-    }
-
     .gallery-grid {
       display: grid;
-      grid-template-columns: 1.4fr 0.8fr;
-      grid-template-rows: 170px 170px;
-      gap: 15px;
+      grid-template-columns: 1.3fr 0.7fr 0.7fr;
+      grid-template-rows: 220px 220px;
+      gap: 12px;
     }
 
-    .gallery-box {
+    .gallery-item {
       background: var(--aqua);
       border-radius: 20px;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--muted);
       text-align: center;
-      border: 1px dashed rgba(7, 94, 104, 0.16);
-      font-size: 13px;
+      padding: 20px;
     }
 
-    .gallery-box:first-child {
+    .gallery-item:first-child {
       grid-row: span 2;
-      font-size: 15px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     /* =========================
        REVIEWS
     ========================= */
 
-    .reviews {
-      background: var(--aqua);
-    }
-
-    .review-grid {
+    .reviews-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .review {
+    .review-card {
       background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
       padding: 27px;
-      border-radius: 20px;
     }
 
     .stars {
-      color: #E4A632;
+      color: var(--teal);
+      margin-bottom: 13px;
       letter-spacing: 2px;
-      margin-bottom: 10px;
     }
 
-    .review p {
-      color: var(--text);
-      font-size: 14px;
-      margin-bottom: 14px;
+    .review-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 17px;
     }
 
-    .review strong {
+    .review-name {
       color: var(--ocean);
-      font-size: 12px;
+      font-weight: 800;
+      font-size: 0.88rem;
     }
 
     /* =========================
        LOCATION
     ========================= */
 
-    .location {
-      background: white;
-    }
-
     .location-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      gap: 35px;
     }
 
     .location-card {
+      background: white;
+      border-radius: 24px;
+      padding: 30px;
       border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 28px;
     }
 
     .location-card h3 {
       color: var(--ocean);
-      margin-bottom: 9px;
+      margin-bottom: 15px;
     }
 
     .location-card p {
       color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      font-size: 0.92rem;
     }
 
     /* =========================
@@ -859,33 +917,22 @@
     ========================= */
 
     .faq {
-      background: var(--aqua);
-    }
-
-    .faq-list {
       max-width: 800px;
       margin: auto;
-      background: white;
-      border-radius: 22px;
-      padding: 0 25px;
     }
 
     details {
-      padding: 19px 0;
       border-bottom: 1px solid var(--border);
-    }
-
-    details:last-child {
-      border-bottom: 0;
+      padding: 19px 0;
     }
 
     summary {
       cursor: pointer;
       list-style: none;
-      color: var(--ocean);
       font-weight: 800;
-      padding-right: 30px;
+      color: var(--ocean);
       position: relative;
+      padding-right: 30px;
     }
 
     summary::-webkit-details-marker {
@@ -896,8 +943,7 @@
       content: "+";
       position: absolute;
       right: 0;
-      font-size: 20px;
-      color: var(--teal);
+      font-size: 1.3rem;
     }
 
     details[open] summary::after {
@@ -906,8 +952,8 @@
 
     details p {
       color: var(--muted);
-      font-size: 14px;
-      padding-top: 10px;
+      margin-top: 12px;
+      font-size: 0.9rem;
     }
 
     /* =========================
@@ -915,24 +961,23 @@
     ========================= */
 
     .final-cta {
-      background:
-        radial-gradient(circle at 85% 15%, rgba(95, 155, 114, 0.30), transparent 25%),
-        var(--ocean);
+      background: var(--ocean);
       color: white;
       text-align: center;
-      padding: 100px 0;
+      padding: 90px 20px;
     }
 
     .final-cta h2 {
-      font-size: clamp(37px, 6vw, 58px);
-      line-height: 1.05;
-      margin-bottom: 14px;
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1;
+      margin-bottom: 18px;
+      letter-spacing: -1.5px;
     }
 
     .final-cta p {
       max-width: 600px;
-      margin: auto auto 27px;
-      opacity: 0.8;
+      margin: 0 auto 27px;
+      opacity: 0.85;
     }
 
     .final-cta .btn {
@@ -942,7 +987,6 @@
 
     .final-cta .btn:hover {
       background: var(--aqua);
-      transform: translateY(-3px);
     }
 
     /* =========================
@@ -950,9 +994,9 @@
     ========================= */
 
     footer {
-      background: #064A52;
+      background: var(--ocean-dark);
       color: white;
-      padding: 32px 0;
+      padding: 35px 0;
     }
 
     .footer-inner {
@@ -962,38 +1006,157 @@
       gap: 20px;
     }
 
-    .footer-logo {
-      font-weight: 900;
-      font-size: 18px;
-    }
-
-    .footer-logo span {
-      color: #7DD8D5;
+    .footer-brand {
+      font-weight: 800;
     }
 
     .footer-text {
-      opacity: 0.65;
-      font-size: 11px;
+      font-size: 0.8rem;
+      opacity: 0.7;
     }
 
     /* =========================
-       TABLET
+       FLOATING MESSENGER
     ========================= */
 
-    @media (max-width: 900px) {
+    .messenger-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 1100;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.55rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .messenger-float:hover {
+      transform: scale(1.08);
+      background: var(--ocean);
+    }
+
+    /* =========================
+       MOBILE BOOKING BAR
+    ========================= */
+
+    .mobile-booking-bar {
+      display: none;
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 950px) {
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .hero-image img {
+        height: 450px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .rentals-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .day-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .perfect-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .booking-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 720px) {
+
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      nav {
+        position: sticky;
+      }
+
+      .nav-inner {
+        min-height: 65px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
 
       .nav-links {
-        position: absolute;
-        top: 72px;
-        left: 0;
-        width: 100%;
-        background: white;
         display: none;
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        top: 70px;
+        background: white;
+        border-radius: 18px;
+        padding: 15px;
+        box-shadow: var(--shadow);
         flex-direction: column;
         align-items: stretch;
-        padding: 15px 20px 20px;
-        gap: 3px;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        gap: 4px;
       }
 
       .nav-links.active {
@@ -1001,87 +1164,24 @@
       }
 
       .nav-links a {
-        padding: 11px;
+        padding: 12px 14px;
       }
 
       .nav-book {
         text-align: center;
       }
 
-      .menu-btn {
-        display: block;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-content {
-        text-align: center;
-      }
-
-      .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-info,
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .hero-photo {
-        max-width: 700px;
-        margin: auto;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .amenity-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .rental-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .booking-steps {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .review-grid {
-        grid-template-columns: 1fr;
-      }
-
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 560px) {
-
-      section {
-        padding: 65px 0;
-      }
-
-      .container {
-        width: 92%;
-      }
-
       .hero {
-        padding: 38px 0 60px;
+        padding: 25px 0 45px;
+      }
+
+      .hero-image img {
+        height: 330px;
       }
 
       .hero h1 {
-        font-size: 43px;
-        letter-spacing: -1.8px;
-      }
-
-      .hero-description {
-        font-size: 16px;
+        font-size: 3rem;
+        letter-spacing: -2px;
       }
 
       .hero-buttons {
@@ -1090,21 +1190,6 @@
 
       .hero-buttons .btn {
         width: 100%;
-      }
-
-      .hero-photo img {
-        border-radius: 20px;
-      }
-
-      .hero-photo::before {
-        right: -8px;
-        bottom: -8px;
-        border-radius: 23px;
-      }
-
-      .vibes-inner {
-        gap: 7px 14px;
-        font-size: 10px;
       }
 
       .quick-grid {
@@ -1119,55 +1204,136 @@
         border-right: 0;
       }
 
-      .quick-item:nth-child(3),
-      .quick-item:nth-child(4) {
-        border-bottom: 0;
+      section {
+        padding: 65px 0;
       }
 
-      .about-card {
-        padding: 40px 25px;
+      .amenities-grid,
+      .day-grid,
+      .booking-grid {
+        grid-template-columns: 1fr;
       }
 
-      .rental-grid {
+      .rentals-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .rate-card {
-        padding: 35px 18px;
+      .perfect-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .rate-price {
-        font-size: 58px;
+      .price-card {
+        padding: 30px 20px;
       }
 
-      .booking-steps {
+      .price-features {
         grid-template-columns: 1fr;
       }
 
-      .booking-step p {
-        min-height: auto;
+      .per-person-grid {
+        grid-template-columns: 1fr;
       }
 
       .gallery-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, 180px);
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 230px 170px;
       }
 
-      .gallery-box:first-child {
+      .gallery-item:first-child {
+        grid-column: span 2;
         grid-row: auto;
       }
 
-      .location-grid {
+      .reviews-grid {
         grid-template-columns: 1fr;
-      }
-
-      .faq-list {
-        padding: 0 18px;
       }
 
       .footer-inner {
         flex-direction: column;
         text-align: center;
+      }
+
+      /* Mobile Messenger moves above booking bar */
+      .messenger-float {
+        right: 16px;
+        bottom: 82px;
+        width: 52px;
+        height: 52px;
+      }
+
+      .mobile-booking-bar {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1050;
+        padding: 9px 12px;
+        background: rgba(255,255,255,0.97);
+        border-top: 1px solid var(--border);
+        box-shadow: 0 -6px 20px rgba(7,94,104,0.10);
+      }
+
+      .mobile-booking-price {
+        padding-left: 3px;
+        line-height: 1.05;
+      }
+
+      .mobile-booking-price strong {
+        display: block;
+        color: var(--ocean);
+        font-size: 1rem;
+      }
+
+      .mobile-booking-price span {
+        color: var(--muted);
+        font-size: 0.65rem;
+      }
+
+      .mobile-booking-bar .btn {
+        min-height: 42px;
+        padding: 9px 13px;
+        font-size: 0.72rem;
+      }
+
+      body {
+        padding-bottom: 61px;
+      }
+
+      .signature {
+        padding: 70px 20px;
+      }
+
+    }
+
+    @media (max-width: 430px) {
+
+      .hero h1 {
+        font-size: 2.65rem;
+      }
+
+      .rentals-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .perfect-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .vibes-list {
+        gap: 7px 10px;
+        font-size: 0.68rem;
+      }
+
+      .vibes-list span::after {
+        margin-left: 10px;
+      }
+
+      .logo {
+        font-size: 1.05rem;
       }
 
     }
@@ -1177,1060 +1343,1170 @@
 
 <body>
 
-
   <!-- =========================
        NAVIGATION
-  ========================== -->
+  ========================= -->
 
-  <header>
+  <nav>
+    <div class="container nav-inner">
 
-    <div class="container nav">
-
-      <a href="#" class="logo">
-        🌊 Floatopia <span>Waves</span>
+      <a href="#home" class="logo">
+        Floatopia <span>Waves</span>
       </a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
         ☰
       </button>
 
-      <nav class="nav-links" id="navLinks">
-
+      <div class="nav-links" id="navLinks">
         <a href="#about">About</a>
         <a href="#amenities">Amenities</a>
         <a href="#rentals">Rentals</a>
-        <a href="#rates">Rates</a>
-        <a href="#availability">Availability</a>
+        <a href="#gallery">Gallery</a>
         <a href="#faq">FAQ</a>
-
-        <a
-          href="https://m.me/floatopiawaves"
-          target="_blank"
-          class="nav-book">
-          Book Now
-        </a>
-
-      </nav>
+        <a href="#booking" class="nav-book">Book Now</a>
+      </div>
 
     </div>
-
-  </header>
+  </nav>
 
 
   <!-- =========================
        HERO
-  ========================== -->
+  ========================= -->
 
-  <section class="hero">
+  <main id="home">
 
-    <div class="container hero-grid">
+    <section class="hero">
+      <div class="container hero-grid">
 
-      <div class="hero-content">
-
-        <div class="hero-badge">
-          🌊 FLOATING COTTAGE • SAMAL ISLAND
+        <div class="hero-image">
+          <img
+            src="floating-cottage.jpg"
+            alt="Floatopia Waves Floating Cottage in Samal"
+          >
         </div>
 
-        <h1>
-          Your day on the water<br>
-          <span>starts here.</span>
-        </h1>
+        <div class="hero-content">
 
-        <p class="hero-description">
-          Swim, chill, bond, and make memories with your favorite
-          people at Floatopia Waves.
+          <div class="eyebrow">
+            Floating Cottage • Samal Island
+          </div>
+
+          <h1>
+            Your day on the water starts here.
+          </h1>
+
+          <p class="hero-text">
+            Swim, chill, sing, explore, eat, laugh and make memories
+            with your favorite people at Floatopia Waves.
+          </p>
+
+          <div class="hero-price">
+            ₱4,500
+            <small>/ cottage</small>
+          </div>
+
+          <div class="hero-details">
+            <div class="hero-detail">👥 Up to 25 guests</div>
+            <div class="hero-detail">⏰ 8 AM – 4 PM</div>
+            <div class="hero-detail">📍 Samal Island</div>
+          </div>
+
+          <div class="hero-buttons">
+            <a
+              href="#booking"
+              class="btn btn-primary"
+            >
+              Book Floatopia
+            </a>
+
+            <a
+              href="https://script.google.com/macros/s/AKfycbwfV716-gs2TuW0avxoHM2ehsqxuSvmNR0rgbQ0fI9bzUjZaU_R7468HpkV3FqiwlXy/exec"
+              target="_blank"
+              class="btn btn-secondary"
+            >
+              Check Availability
+            </a>
+          </div>
+
+          <p class="deposit-note">
+            Booking deposit: ₱1,000–₱2,000 to secure your date.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- GOOD VIBES -->
+
+    <div class="vibes-strip">
+      <div class="container vibes-list">
+        <span>SWIM</span>
+        <span>SING</span>
+        <span>EXPLORE</span>
+        <span>CHILL</span>
+        <span>MAKE MEMORIES</span>
+      </div>
+    </div>
+
+
+    <!-- QUICK INFO -->
+
+    <div class="quick-info">
+      <div class="container quick-grid">
+
+        <div class="quick-item">
+          <strong>₱4,500</strong>
+          <span>Base cottage rate</span>
+        </div>
+
+        <div class="quick-item">
+          <strong>25 Guests</strong>
+          <span>Maximum capacity</span>
+        </div>
+
+        <div class="quick-item">
+          <strong>8 AM – 4 PM</strong>
+          <span>Enjoy the whole day</span>
+        </div>
+
+        <div class="quick-item">
+          <strong>Samal Island</strong>
+          <span>Barangay Tambo</span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+      <div class="container about-grid reveal">
+
+        <div class="about-box">
+          <div class="about-box-inner">
+            <div class="about-box-icon">🌊</div>
+
+            <h3>
+              Good days float here.
+            </h3>
+
+            <p>
+              A simple place to slow down, enjoy the water,
+              and spend quality time with your people.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-content">
+
+          <div class="eyebrow">
+            Welcome to Floatopia
+          </div>
+
+          <h2>
+            Not just a cottage. It's your floating day out.
+          </h2>
+
+          <p>
+            Floatopia Waves is a floating cottage experience
+            in Samal Island made for relaxed days, good food,
+            swimming, bonding and a little bit of adventure.
+          </p>
+
+          <p>
+            Bring your family, barkada, coworkers or favorite people.
+            You bring the good vibes, we'll provide the floating spot.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         AMENITIES
+    ========================= -->
+
+    <section id="amenities" class="section-aqua">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            What's waiting for you
+          </div>
+
+          <h2>
+            Everything you need for a fun day on the water.
+          </h2>
+
+          <p>
+            Come ready to swim, chill and enjoy.
+          </p>
+
+        </div>
+
+        <div class="amenities-grid">
+
+          <div class="amenity-card reveal">
+            <div class="amenity-icon">🏊</div>
+            <h3>Mini Pool</h3>
+            <p>
+              For those who want to cool down without
+              leaving the cottage.
+            </p>
+          </div>
+
+          <div class="amenity-card reveal">
+            <div class="amenity-icon">💦</div>
+            <h3>Blue Water Slide</h3>
+            <p>
+              Because apparently jumping into the water
+              isn't enough.
+            </p>
+          </div>
+
+          <div class="amenity-card reveal">
+            <div class="amenity-icon">🚻</div>
+            <h3>Clean CR</h3>
+            <p>
+              A clean and convenient restroom
+              available during your stay.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         OPTIONAL RENTALS
+    ========================= -->
+
+    <section id="rentals">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            Add more fun
+          </div>
+
+          <h2>
+            Want to level up your Floatopia day?
+          </h2>
+
+          <p>
+            Add these optional rentals to your booking.
+          </p>
+
+        </div>
+
+        <div class="rentals-grid">
+
+          <div class="rental-card reveal">
+            <div class="rental-icon">🎤</div>
+            <h3>Mini Videoke</h3>
+            <div class="rental-price">₱300</div>
+            <p>Sing it. No judgment.</p>
+          </div>
+
+          <div class="rental-card reveal">
+            <div class="rental-icon">📷</div>
+            <h3>Underwater Camera</h3>
+            <div class="rental-price">₱500 / battery</div>
+            <p>Around 1–2 hours battery.</p>
+          </div>
+
+          <div class="rental-card reveal">
+            <div class="rental-icon">🚁</div>
+            <h3>Drone Rental</h3>
+            <div class="rental-price">₱500</div>
+            <p>10–15 mins total clips.</p>
+          </div>
+
+          <div class="rental-card reveal">
+            <div class="rental-icon">🏄</div>
+            <h3>Paddle Board</h3>
+            <div class="rental-price">₱300 / hour</div>
+            <p>Float, paddle, repeat.</p>
+          </div>
+
+          <div class="rental-card reveal">
+            <div class="rental-icon">🤿</div>
+            <h3>Snorkel</h3>
+            <div class="rental-price">₱150 / day</div>
+            <p>Explore what's underneath.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         WHAT YOUR DAY LOOKS LIKE
+    ========================= -->
+
+    <section class="section-aqua">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            Your Floatopia Day
+          </div>
+
+          <h2>
+            So what do you actually do all day?
+          </h2>
+
+          <p>
+            Honestly? Whatever makes your group happy.
+          </p>
+
+        </div>
+
+        <div class="day-grid">
+
+          <div class="day-card reveal">
+            <div class="day-number">01 • ARRIVE</div>
+            <h3>Settle In</h3>
+            <p>
+              Get comfortable, unpack the food,
+              pick your favorite spot and enjoy the view.
+            </p>
+          </div>
+
+          <div class="day-card reveal">
+            <div class="day-number">02 • GET WET</div>
+            <h3>Swim & Explore</h3>
+            <p>
+              Jump in the water, use the slide,
+              snorkel or try the paddle board.
+            </p>
+          </div>
+
+          <div class="day-card reveal">
+            <div class="day-number">03 • GOOD VIBES</div>
+            <h3>Eat, Sing & Chill</h3>
+            <p>
+              Bring the food, turn on the videoke,
+              talk nonsense and enjoy the day.
+            </p>
+          </div>
+
+          <div class="day-card reveal">
+            <div class="day-number">04 • MAKE MEMORIES</div>
+            <h3>Take Too Many Photos</h3>
+            <p>
+              Drone shots, underwater photos,
+              group selfies, everything counts.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         PERFECT FOR
+    ========================= -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            Bring your people
+          </div>
+
+          <h2>
+            Perfect for...
+          </h2>
+
+          <p>
+            Whatever the reason, the water is a good place to celebrate it.
+          </p>
+
+        </div>
+
+        <div class="perfect-grid">
+
+          <div class="perfect-card reveal">
+            <div class="emoji">👨‍👩‍👧‍👦</div>
+            <h3>Family Day</h3>
+            <p>
+              Quality time away from the usual routine.
+            </p>
+          </div>
+
+          <div class="perfect-card reveal">
+            <div class="emoji">🎂</div>
+            <h3>Birthday Hangout</h3>
+            <p>
+              Celebrate with water, food and good vibes.
+            </p>
+          </div>
+
+          <div class="perfect-card reveal">
+            <div class="emoji">🍻</div>
+            <h3>Barkada Day</h3>
+            <p>
+              The group chat finally made it outside.
+            </p>
+          </div>
+
+          <div class="perfect-card reveal">
+            <div class="emoji">💙</div>
+            <h3>Couples & Friends</h3>
+            <p>
+              Chill, swim and make the day count.
+            </p>
+          </div>
+
+          <div class="perfect-card reveal">
+            <div class="emoji">🤝</div>
+            <h3>Team Bonding</h3>
+            <p>
+              A different kind of team meeting.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         PRICING
+    ========================= -->
+
+    <section class="section-aqua">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            Simple pricing
+          </div>
+
+          <h2>
+            One cottage. Your whole group.
+          </h2>
+
+          <p>
+            No complicated packages. Just book the cottage
+            and add what you want.
+          </p>
+
+        </div>
+
+        <div class="price-wrap">
+
+          <div class="price-card reveal">
+
+            <div class="price-label">
+              Floatopia Waves
+            </div>
+
+            <div class="big-price">
+              ₱4,500
+            </div>
+
+            <div class="price-sub">
+              Cottage rental • 8 AM – 4 PM
+            </div>
+
+            <div class="price-features">
+
+              <div class="price-feature">
+                👥 Up to 25 guests
+              </div>
+
+              <div class="price-feature">
+                🏊 Mini pool
+              </div>
+
+              <div class="price-feature">
+                💦 Blue water slide
+              </div>
+
+              <div class="price-feature">
+                🚻 Clean CR
+              </div>
+
+            </div>
+
+            <div class="per-person">
+
+              <h3>
+                The more friends you bring, the better it gets.
+              </h3>
+
+              <p>
+                Here's what the ₱4,500 cottage rate works out to
+                when you split it with your group:
+              </p>
+
+              <div class="per-person-grid">
+
+                <div class="per-person-item">
+                  <strong>₱450</strong>
+                  <span>10 people</span>
+                </div>
+
+                <div class="per-person-item">
+                  <strong>₱300</strong>
+                  <span>15 people</span>
+                </div>
+
+                <div class="per-person-item">
+                  <strong>₱180</strong>
+                  <span>25 people</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div style="margin-top:28px;">
+              <a href="#booking" class="btn btn-primary">
+                Check Your Date
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         AVAILABILITY
+    ========================= -->
+
+    <section id="availability">
+
+      <div class="container availability-content reveal">
+
+        <div class="calendar-icon">
+          📅
+        </div>
+
+        <div class="eyebrow">
+          Before you book
+        </div>
+
+        <h2>
+          Check if your date is available.
+        </h2>
+
+        <p>
+          Take a quick look at our calendar before sending
+          your booking inquiry.
         </p>
 
-        <div class="hero-price">
-          <strong>₱4,500</strong>
-          <span>floating cottage</span>
-        </div>
+        <a
+          href="https://script.google.com/macros/s/AKfycbwfV716-gs2TuW0avxoHM2ehsqxuSvmNR0rgbQ0fI9bzUjZaU_R7468HpkV3FqiwlXy/exec"
+          target="_blank"
+          class="btn btn-primary"
+        >
+          Check Availability
+        </a>
 
-        <div class="hero-info">
+      </div>
 
-          <div class="info-pill">
-            👥 Up to 25 Guests
+    </section>
+
+
+    <!-- =========================
+         HOW TO BOOK
+    ========================= -->
+
+    <section id="booking" class="section-aqua">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            Ready when you are
           </div>
 
-          <div class="info-pill">
-            🕗 8 AM – 4 PM
+          <h2>
+            How to book Floatopia
+          </h2>
+
+          <p>
+            Easy lang. Four simple steps.
+          </p>
+
+        </div>
+
+        <div class="booking-grid">
+
+          <div class="booking-card reveal">
+
+            <div class="booking-number">
+              1
+            </div>
+
+            <h3>
+              Check Availability
+            </h3>
+
+            <p>
+              Check the calendar and see if your preferred date is free.
+            </p>
+
+            <a
+              href="https://script.google.com/macros/s/AKfycbwfV716-gs2TuW0avxoHM2ehsqxuSvmNR0rgbQ0fI9bzUjZaU_R7468HpkV3FqiwlXy/exec"
+              target="_blank"
+              class="btn btn-secondary"
+            >
+              Check Dates
+            </a>
+
           </div>
 
-          <div class="info-pill">
-            📍 Samal Island
+
+          <div class="booking-card reveal">
+
+            <div class="booking-number">
+              2
+            </div>
+
+            <h3>
+              Message Us
+            </h3>
+
+            <p>
+              Send us your preferred date, name and number of guests.
+            </p>
+
+            <a
+              href="https://m.me/floatopiawaves"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              Message Us
+            </a>
+
+          </div>
+
+
+          <div class="booking-card reveal">
+
+            <div class="booking-number">
+              3
+            </div>
+
+            <h3>
+              Confirm
+            </h3>
+
+            <p>
+              We'll confirm the details and let you know the next step.
+            </p>
+
+          </div>
+
+
+          <div class="booking-card reveal">
+
+            <div class="booking-number">
+              4
+            </div>
+
+            <h3>
+              Secure Your Date
+            </h3>
+
+            <p>
+              Pay the booking deposit to officially reserve your date.
+            </p>
+
           </div>
 
         </div>
 
-        <div class="hero-buttons">
-
-          <a
-            href="https://m.me/floatopiawaves"
-            target="_blank"
-            class="btn btn-primary">
-            💬 Book Now
-          </a>
-
-          <a
-            href="https://script.google.com/macros/s/AKfycbwfV716-gs2TuW0avxoHM2ehsqxuSvmNR0rgbQ0fI9bzUjZaU_R7468HpkV3FqiwlXy/exec"
-            target="_blank"
-            class="btn btn-outline">
-            📅 Check Availability
-          </a>
-
-        </div>
-
-        <p class="deposit-note">
+        <p class="booking-note">
           💙 Booking deposit: ₱1,000–₱2,000
         </p>
 
       </div>
 
+    </section>
 
-      <div class="hero-photo">
 
-        <img
-          src="floating-cottage.jpg"
-          alt="Floatopia Waves Floating Cottage in Samal Island">
+    <!-- =========================
+         SIGNATURE VIBE
+    ========================= -->
+
+    <section class="signature">
+
+      <div class="signature-inner reveal">
+
+        <div class="signature-small">
+          The Floatopia Rule
+        </div>
+
+        <h2>
+          No fancy words. Just good vibes.
+        </h2>
+
+        <p class="signature-text">
+          Swim. Laugh. Eat. Sing. Take too many photos.
+          Get wet. Stay a little longer. Go home tired and happy.
+        </p>
+
+        <div class="signature-vibes">
+          <span>🌊 Swim</span>
+          <span>😂 Laugh</span>
+          <span>🍴 Eat</span>
+          <span>🎤 Sing</span>
+          <span>📸 Take photos</span>
+          <span>💙 Make memories</span>
+        </div>
 
       </div>
 
-    </div>
+    </section>
 
-  </section>
+
+    <!-- =========================
+         GALLERY
+    ========================= -->
+
+    <section id="gallery">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            Floatopia moments
+          </div>
+
+          <h2>
+            A little peek at your next day out.
+          </h2>
+
+          <p>
+            More photos coming soon.
+          </p>
+
+        </div>
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item">
+            <img
+              src="floating-cottage.jpg"
+              alt="Floatopia Waves Floating Cottage"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <span>
+              📸<br>
+              Cottage & group photos
+            </span>
+          </div>
+
+          <div class="gallery-item">
+            <span>
+              🌊<br>
+              Water & snorkeling
+            </span>
+          </div>
+
+          <div class="gallery-item">
+            <span>
+              🏄<br>
+              Paddle board
+            </span>
+          </div>
+
+          <div class="gallery-item">
+            <span>
+              💦<br>
+              Water slide & fun
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         REVIEWS
+    ========================= -->
+
+    <section class="section-aqua">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            From our guests
+          </div>
+
+          <h2>
+            Good days are better when shared.
+          </h2>
+
+          <p>
+            Real guest feedback will be added here.
+          </p>
+
+        </div>
+
+        <div class="reviews-grid">
+
+          <div class="review-card reveal">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p>
+              "Such a fun place to spend the day with family and friends.
+              The water was perfect!"
+            </p>
+
+            <div class="review-name">
+              Floatopia Guest
+            </div>
+
+          </div>
+
+
+          <div class="review-card reveal">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p>
+              "Chill place, good vibes and super nice for group bonding.
+              Definitely coming back."
+            </p>
+
+            <div class="review-name">
+              Floatopia Guest
+            </div>
+
+          </div>
+
+
+          <div class="review-card reveal">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p>
+              "Perfect for a whole-day hangout. Bring your food,
+              your friends and you're good!"
+            </p>
+
+            <div class="review-name">
+              Floatopia Guest
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         LOCATION
+    ========================= -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            Find us
+          </div>
+
+          <h2>
+            Floatopia Waves, Samal Island
+          </h2>
+
+          <p>
+            Here's where to head before your floating adventure.
+          </p>
+
+        </div>
+
+        <div class="location-grid">
+
+          <div class="location-card reveal">
+
+            <h3>
+              📍 Address
+            </h3>
+
+            <p>
+              Barangay Tambo, Babak District,
+              Samal, Philippines, 8119
+            </p>
+
+          </div>
+
+
+          <div class="location-card reveal">
+
+            <h3>
+              🚗 Parking & Pickup
+            </h3>
+
+            <p>
+              Purok Kauswagan, Miranda,
+              Babak District
+            </p>
+
+            <p>
+              Landmark:
+              Papasok po sa kanto ng Mokz Traveller Inn.
+              Makikita niyo po sa dulo, left side,
+              may malaking parking area.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FAQ
+    ========================= -->
+
+    <section id="faq" class="section-aqua">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            Questions
+          </div>
+
+          <h2>
+            Frequently asked questions
+          </h2>
+
+        </div>
+
+        <div class="faq reveal">
+
+          <details>
+            <summary>
+              How much is the cottage?
+            </summary>
+
+            <p>
+              The cottage rental is ₱4,500 for 8 AM to 4 PM.
+              Maximum capacity is 25 guests.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              How many people can join?
+            </summary>
+
+            <p>
+              The cottage can accommodate up to 25 guests.
+              Additional guests are ₱100 each.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              What time is the booking?
+            </summary>
+
+            <p>
+              Regular cottage hours are from 8:00 AM to 4:00 PM.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              Is there a booking deposit?
+            </summary>
+
+            <p>
+              Yes. A booking deposit of ₱1,000–₱2,000 is required
+              to secure your date.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              What can we rent?
+            </summary>
+
+            <p>
+              Optional rentals include mini videoke, underwater camera,
+              drone, paddle board and snorkels.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              How do I book?
+            </summary>
+
+            <p>
+              Check the availability calendar first, then message us
+              through Messenger with your preferred date and group details.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL CTA
+    ========================= -->
+
+    <section class="final-cta">
+
+      <div class="container reveal">
+
+        <h2>
+          Your next good day starts here.
+        </h2>
+
+        <p>
+          Pick a date, bring your people and let the water do the rest.
+        </p>
+
+        <a
+          href="https://m.me/floatopiawaves"
+          target="_blank"
+          class="btn"
+        >
+          💬 Book Floatopia
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
 
 
   <!-- =========================
-       VIBES
-  ========================== -->
+       FLOATING MESSENGER
+  ========================= -->
 
-  <div class="vibes">
+  <a
+    href="https://m.me/floatopiawaves"
+    target="_blank"
+    class="messenger-float"
+    aria-label="Message Floatopia Waves"
+    title="Message us"
+  >
+    💬
+  </a>
 
-    <div class="container vibes-inner">
 
-      <span>🌊 SWIM</span>
-      <span>🎤 SING</span>
-      <span>🤿 EXPLORE</span>
-      <span>🏄 CHILL</span>
-      <span>📸 MAKE MEMORIES</span>
+  <!-- =========================
+       MOBILE BOOKING BAR
+  ========================= -->
 
+  <div class="mobile-booking-bar">
+
+    <div class="mobile-booking-price">
+      <strong>₱4,500</strong>
+      <span>Floating cottage</span>
     </div>
+
+    <a
+      href="https://script.google.com/macros/s/AKfycbwfV716-gs2TuW0avxoHM2ehsqxuSvmNR0rgbQ0fI9bzUjZaU_R7468HpkV3FqiwlXy/exec"
+      target="_blank"
+      class="btn btn-secondary"
+    >
+      Check Date
+    </a>
+
+    <a
+      href="https://m.me/floatopiawaves"
+      target="_blank"
+      class="btn btn-primary"
+    >
+      💬 Book
+    </a>
 
   </div>
 
 
   <!-- =========================
-       QUICK INFO
-  ========================== -->
-
-  <section class="quick-info">
-
-    <div class="container quick-grid">
-
-      <div class="quick-item">
-        <strong>₱4,500</strong>
-        <span>Cottage Rate</span>
-      </div>
-
-      <div class="quick-item">
-        <strong>25</strong>
-        <span>Maximum Guests</span>
-      </div>
-
-      <div class="quick-item">
-        <strong>8 AM–4 PM</strong>
-        <span>Day Use</span>
-      </div>
-
-      <div class="quick-item">
-        <strong>SAMAL</strong>
-        <span>Davao</span>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       ABOUT
-  ========================== -->
-
-  <section class="about" id="about">
-
-    <div class="container about-grid">
-
-      <div class="about-copy">
-
-        <div class="eyebrow">
-          WELCOME TO FLOATOPIA
-        </div>
-
-        <h2>
-          More than just a floating cottage.
-        </h2>
-
-        <p>
-          Floatopia Waves is your chill spot on the water
-          in Samal Island.
-        </p>
-
-        <p>
-          Come with your family, friends, or favorite people
-          and spend the day swimming, relaxing, bonding,
-          and enjoying the clear waters.
-        </p>
-
-        <div class="about-highlight">
-          🌴 Come for the water. Stay for the good vibes.
-        </div>
-
-      </div>
-
-
-      <div class="about-card">
-
-        <div class="about-card-icon">
-          🌊
-        </div>
-
-        <h3>
-          Float. Chill. Repeat.
-        </h3>
-
-        <p>
-          No complicated plans. Just good people,
-          good water, and a good day.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       AMENITIES
-  ========================== -->
-
-  <section class="amenities" id="amenities">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <div class="eyebrow">
-          WHAT'S INCLUDED
-        </div>
-
-        <h2>
-          Everything you need for a good day.
-        </h2>
-
-        <p>
-          Your cottage rental already comes with
-          the essentials for a fun day on the water.
-        </p>
-
-      </div>
-
-
-      <div class="amenity-grid">
-
-
-        <div class="amenity">
-
-          <div class="amenity-icon">
-            🏊
-          </div>
-
-          <h3>
-            Mini Pool
-          </h3>
-
-          <p>
-            Cool down, relax, and enjoy the water
-            without leaving the cottage.
-          </p>
-
-        </div>
-
-
-        <div class="amenity">
-
-          <div class="amenity-icon">
-            💦
-          </div>
-
-          <h3>
-            Blue Water Slide
-          </h3>
-
-          <p>
-            Because apparently, walking into the water
-            is too boring.
-          </p>
-
-        </div>
-
-
-        <div class="amenity">
-
-          <div class="amenity-icon">
-            🚻
-          </div>
-
-          <h3>
-            Clean CR
-          </h3>
-
-          <p>
-            A clean and convenient restroom right
-            where you need it.
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       RENTALS
-  ========================== -->
-
-  <section class="rentals" id="rentals">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <div class="eyebrow">
-          ADD MORE FUN
-        </div>
-
-        <h2>
-          Want to add more fun?
-        </h2>
-
-        <p>
-          Make your Floatopia day even better with
-          these optional rentals.
-        </p>
-
-      </div>
-
-
-      <div class="rental-grid">
-
-
-        <div class="rental">
-
-          <div class="rental-icon">🎤</div>
-
-          <h3>Mini Videoke</h3>
-
-          <span class="rental-price">₱300</span>
-
-        </div>
-
-
-        <div class="rental">
-
-          <div class="rental-icon">📹</div>
-
-          <h3>Underwater Camera</h3>
-
-          <span class="rental-price">₱500 / battery</span>
-
-          <small>Approx. 1–2 hours</small>
-
-        </div>
-
-
-        <div class="rental">
-
-          <div class="rental-icon">🚁</div>
-
-          <h3>Drone Rental</h3>
-
-          <span class="rental-price">₱500</span>
-
-          <small>10–15 mins total clips</small>
-
-        </div>
-
-
-        <div class="rental">
-
-          <div class="rental-icon">🏄</div>
-
-          <h3>Paddle Board</h3>
-
-          <span class="rental-price">₱300 / hour</span>
-
-        </div>
-
-
-        <div class="rental">
-
-          <div class="rental-icon">🤿</div>
-
-          <h3>Snorkel</h3>
-
-          <span class="rental-price">₱150 / day</span>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       RATE
-  ========================== -->
-
-  <section class="rate-section" id="rates">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <div class="eyebrow">
-          SIMPLE RATE
-        </div>
-
-        <h2>
-          One cottage. One whole day.
-        </h2>
-
-      </div>
-
-
-      <div class="rate-card">
-
-        <div class="rate-card-label">
-          Floating Cottage
-        </div>
-
-        <div class="rate-price">
-          ₱4,500
-        </div>
-
-        <h3>
-          Good vibes included.
-        </h3>
-
-        <p>
-          Enjoy the cottage from 8:00 AM to 4:00 PM.
-        </p>
-
-        <div class="rate-details">
-
-          <span class="rate-detail">
-            👥 Up to 25 Guests
-          </span>
-
-          <span class="rate-detail">
-            🕗 8 AM–4 PM
-          </span>
-
-          <span class="rate-detail">
-            💙 ₱100 / additional guest
-          </span>
-
-        </div>
-
-        <a
-          href="https://script.google.com/macros/s/AKfycbwfV716-gs2TuW0avxoHM2ehsqxuSvmNR0rgbQ0fI9bzUjZaU_R7468HpkV3FqiwlXy/exec"
-          target="_blank"
-          class="btn btn-primary">
-          📅 Check Availability
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       AVAILABILITY
-  ========================== -->
-
-  <section class="availability" id="availability">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <div class="eyebrow">
-          PLAN YOUR DAY
-        </div>
-
-        <h2>
-          Check your date.
-        </h2>
-
-        <p>
-          Don't guess. Check the calendar first.
-        </p>
-
-      </div>
-
-
-      <div class="availability-card">
-
-        <div class="availability-icon">
-          📅
-        </div>
-
-        <h3>
-          Floatopia Availability Calendar
-        </h3>
-
-        <p>
-          Check booked and available dates before
-          sending us your booking details.
-        </p>
-
-        <a
-          href="https://script.google.com/macros/s/AKfycbwfV716-gs2TuW0avxoHM2ehsqxuSvmNR0rgbQ0fI9bzUjZaU_R7468HpkV3FqiwlXy/exec"
-          target="_blank"
-          class="btn btn-primary">
-          📅 Open Availability Calendar
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       HOW TO BOOK
-  ========================== -->
-
-  <section class="booking">
-
-    <div class="container">
-
-      <div class="booking-header">
-
-        <div class="eyebrow">
-          HOW TO BOOK
-        </div>
-
-        <h2>
-          Ready to book? It's easy.
-        </h2>
-
-        <p>
-          Four simple steps and you're ready for a day on the water.
-        </p>
-
-      </div>
-
-
-      <div class="booking-steps">
-
-
-        <!-- STEP 1 -->
-
-        <div class="booking-step">
-
-          <div class="booking-step-number">
-            1
-          </div>
-
-          <div class="booking-step-icon">
-            📅
-          </div>
-
-          <h3>
-            Check Availability
-          </h3>
-
-          <p>
-            Choose your preferred date and
-            check if it's available.
-          </p>
-
-          <a
-            href="https://script.google.com/macros/s/AKfycbwfV716-gs2TuW0avxoHM2ehsqxuSvmNR0rgbQ0fI9bzUjZaU_R7468HpkV3FqiwlXy/exec"
-            target="_blank"
-            class="step-button">
-            CHECK DATES
-          </a>
-
-        </div>
-
-
-        <!-- STEP 2 -->
-
-        <div class="booking-step">
-
-          <div class="booking-step-number">
-            2
-          </div>
-
-          <div class="booking-step-icon">
-            💬
-          </div>
-
-          <h3>
-            Message Us
-          </h3>
-
-          <p>
-            Send us your preferred date
-            and number of guests.
-          </p>
-
-          <a
-            href="https://m.me/floatopiawaves"
-            target="_blank"
-            class="step-button">
-            MESSAGE US
-          </a>
-
-        </div>
-
-
-        <!-- STEP 3 -->
-
-        <div class="booking-step">
-
-          <div class="booking-step-number">
-            3
-          </div>
-
-          <div class="booking-step-icon">
-            ✅
-          </div>
-
-          <h3>
-            Confirm
-          </h3>
-
-          <p>
-            We'll confirm your booking details
-            and answer your questions.
-          </p>
-
-        </div>
-
-
-        <!-- STEP 4 -->
-
-        <div class="booking-step">
-
-          <div class="booking-step-number">
-            4
-          </div>
-
-          <div class="booking-step-icon">
-            💙
-          </div>
-
-          <h3>
-            Secure Your Date
-          </h3>
-
-          <p>
-            Pay the booking deposit to secure
-            your reservation.
-          </p>
-
-        </div>
-
-
-      </div>
-
-
-      <div class="booking-note">
-        💙 Booking deposit: ₱1,000–₱2,000
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       GALLERY
-  ========================== -->
-
-  <section class="gallery">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <div class="eyebrow">
-          A LITTLE PREVIEW
-        </div>
-
-        <h2>
-          See you at Floatopia.
-        </h2>
-
-        <p>
-          More Floatopia photos coming soon.
-        </p>
-
-      </div>
-
-
-      <div class="gallery-grid">
-
-        <div class="gallery-box">
-          📸<br>
-          Floating Cottage Photo
-        </div>
-
-        <div class="gallery-box">
-          🌊<br>
-          Clear Waters
-        </div>
-
-        <div class="gallery-box">
-          🌴<br>
-          Good Vibes
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       REVIEWS
-  ========================== -->
-
-  <section class="reviews">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <div class="eyebrow">
-          GOOD VIBES ONLY
-        </div>
-
-        <h2>
-          What our guests say.
-        </h2>
-
-        <p>
-          More guest reviews coming soon.
-        </p>
-
-      </div>
-
-
-      <div class="review-grid">
-
-
-        <div class="review">
-
-          <div class="stars">
-            ★★★★★
-          </div>
-
-          <p>
-            “Such a nice place to spend the day
-            with friends and family!”
-          </p>
-
-          <strong>
-            Floatopia Guest
-          </strong>
-
-        </div>
-
-
-        <div class="review">
-
-          <div class="stars">
-            ★★★★★
-          </div>
-
-          <p>
-            “Clear water, good vibes, and a whole
-            day of relaxing.”
-          </p>
-
-          <strong>
-            Floatopia Guest
-          </strong>
-
-        </div>
-
-
-        <div class="review">
-
-          <div class="stars">
-            ★★★★★
-          </div>
-
-          <p>
-            “Perfect place for bonding and just
-            enjoying the day.”
-          </p>
-
-          <strong>
-            Floatopia Guest
-          </strong>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       LOCATION
-  ========================== -->
-
-  <section class="location">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <div class="eyebrow">
-          COME VISIT US
-        </div>
-
-        <h2>
-          Find Floatopia Waves.
-        </h2>
-
-      </div>
-
-
-      <div class="location-grid">
-
-
-        <div class="location-card">
-
-          <h3>
-            📍 Floating Cottage
-          </h3>
-
-          <p>
-            Barangay Tambo, Babak District,
-            Samal, Philippines, 8119
-          </p>
-
-        </div>
-
-
-        <div class="location-card">
-
-          <h3>
-            🚗 Parking / Pickup
-          </h3>
-
-          <p>
-            Purok Kauswagan, Miranda,
-            Babak District
-          </p>
-
-          <p>
-            Landmark: Papasok po sa kanto ng
-            Mokz Traveller Inn. Makikita niyo po
-            sa dulo, left side, may malaking parking area.
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FAQ
-  ========================== -->
-
-  <section class="faq" id="faq">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <div class="eyebrow">
-          QUESTIONS?
-        </div>
-
-        <h2>
-          Frequently asked questions.
-        </h2>
-
-      </div>
-
-
-      <div class="faq-list">
-
-
-        <details>
-
-          <summary>
-            How much is the cottage?
-          </summary>
-
-          <p>
-            The cottage rate is ₱4,500 for up to
-            25 guests.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            What time is the booking?
-          </summary>
-
-          <p>
-            Our regular day-use schedule is from
-            8:00 AM to 4:00 PM.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Can we bring more than 25 guests?
-          </summary>
-
-          <p>
-            Yes. Additional guests are ₱100 each.
-            Please let us know your total guest count
-            when booking.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            How much is the booking deposit?
-          </summary>
-
-          <p>
-            The booking deposit is ₱1,000–₱2,000,
-            depending on the booking arrangement.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            Can we rent snorkeling equipment?
-          </summary>
-
-          <p>
-            Yes. Snorkel rentals are available for
-            ₱150 per day each.
-          </p>
-
-        </details>
-
-
-        <details>
-
-          <summary>
-            How do I reserve?
-          </summary>
-
-          <p>
-            Check the availability calendar first,
-            then message us on Facebook with your
-            preferred date and guest count.
-          </p>
-
-        </details>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FINAL CTA
-  ========================== -->
-
-  <section class="final-cta">
-
-    <div class="container">
-
-      <h2>
-        Your next good day<br>
-        starts here. 🌊
-      </h2>
-
-      <p>
-        Bring your people. We'll handle the good vibes.
-      </p>
-
-      <a
-        href="https://m.me/floatopiawaves"
-        target="_blank"
-        class="btn">
-        💬 Book Floatopia
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
        FOOTER
-  ========================== -->
+  ========================= -->
 
   <footer>
 
     <div class="container footer-inner">
 
-      <div class="footer-logo">
-        🌊 Floatopia <span>Waves</span>
+      <div class="footer-brand">
+        Floatopia Waves 🌊
       </div>
 
       <div class="footer-text">
-        © 2026 Floatopia Waves • Samal Island
+        Floating good vibes in Samal Island.
       </div>
 
     </div>
@@ -2239,26 +2515,76 @@
 
 
   <!-- =========================
-       MOBILE MENU
-  ========================== -->
+       JAVASCRIPT
+  ========================= -->
 
   <script>
 
-    const menuBtn = document.getElementById("menuBtn");
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
-    menuBtn.addEventListener("click", () => {
+    menuToggle.addEventListener("click", function () {
       navLinks.classList.toggle("active");
+
+      if (navLinks.classList.contains("active")) {
+        menuToggle.textContent = "✕";
+      } else {
+        menuToggle.textContent = "☰";
+      }
     });
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
+
+    /* Close mobile menu after clicking a link */
+
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+      link.addEventListener("click", function() {
+
         navLinks.classList.remove("active");
+        menuToggle.textContent = "☰";
+
       });
+
+    });
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver(
+      function(entries) {
+
+        entries.forEach(function(entry) {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            revealObserver.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+    revealElements.forEach(function(element) {
+      revealObserver.observe(element);
     });
 
   </script>
 
 </body>
 </html>
-```
