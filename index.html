@@ -9,7 +9,96 @@
     <meta name="description" content="Floatopia Waves Floating Cottage in Samal Island. Good vibes, clear waters, and better memories. Book your floating cottage experience today.">
 
     <style>
+/* =========================
+   HOW TO BOOK
+========================= */
 
+.how-to-book {
+    background: white;
+}
+
+.booking-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1050px;
+    margin: auto;
+}
+
+.booking-step {
+    position: relative;
+    background: #effafa;
+    padding: 35px 22px 25px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.step-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #159a9c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.step-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.booking-step h3 {
+    color: #164f56;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.booking-step p {
+    color: #6a7e82;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.step-link {
+    color: #159a9c;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.step-link:hover {
+    text-decoration: underline;
+}
+
+.booking-note {
+    max-width: 850px;
+    margin: 35px auto 0;
+    padding: 25px;
+    border-radius: 18px;
+    background: #e8f9f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.booking-note strong {
+    color: #124d55;
+}
+
+.booking-note span {
+    color: #60777b;
+    font-size: 14px;
+}
         * {
             margin: 0;
             padding: 0;
@@ -708,6 +797,25 @@
         @media (max-width: 768px) {
 
             /* Navigation */
+            /* How to Book */
+
+.booking-steps {
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.booking-step {
+    padding: 30px 25px 25px;
+}
+
+.booking-note {
+    flex-direction: column;
+    padding: 25px 20px;
+}
+
+.booking-note .btn {
+    width: 100%;
+}
 
             .nav-container {
                 position: relative;
@@ -945,6 +1053,9 @@
                 <a href="#availability">
                     Availability
                 </a>
+                <a href="#how-to-book">
+    How to Book
+</a>
 
                 <a href="#location">
                     Location
@@ -1549,59 +1660,230 @@
          AVAILABILITY
     ========================= -->
 
-    <section class="availability" id="availability">
+<!-- =========================
+     AVAILABILITY
+========================= -->
 
-        <div class="container">
+<section class="availability" id="availability">
 
-            <div class="section-heading">
+    <div class="container">
 
-                <span>
-                    AVAILABILITY
-                </span>
+        <div class="section-heading">
 
-                <h2>
-                    Check your date
-                </h2>
+            <span>
+                AVAILABILITY
+            </span>
+
+            <h2>
+                Check your date
+            </h2>
+
+            <p>
+                Before booking, check our calendar to see
+                if your preferred date is available.
+            </p>
+
+        </div>
+
+
+        <div class="availability-card">
+
+            <div class="availability-icon">
+                📅
+            </div>
+
+            <h3>
+                Floatopia Calendar
+            </h3>
+
+            <p>
+                View our live availability calendar
+                and find the perfect date for your trip.
+            </p>
+
+            <a
+                href="https://script.google.com/macros/s/AKfycbwfV716-gs2TuW0avxoHM2ehsqxuSvmNR0rgbQ0fI9bzUjZaU_R7468HpkV3FqiwlXy/exec"
+                target="_blank"
+                class="btn btn-primary"
+            >
+                CHECK AVAILABILITY
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     HOW TO BOOK
+========================= -->
+
+<section class="how-to-book" id="how-to-book">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>
+                BOOKING PROCESS
+            </span>
+
+            <h2>
+                Booking is easy 🌊
+            </h2>
+
+            <p>
+                Just follow these simple steps and
+                you're ready for your Floatopia day.
+            </p>
+
+        </div>
+
+
+        <div class="booking-steps">
+
+
+            <!-- STEP 1 -->
+
+            <div class="booking-step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <div class="step-icon">
+                    📅
+                </div>
+
+                <h3>
+                    Check Availability
+                </h3>
 
                 <p>
-                    See which dates are currently available
-                    before sending us your booking inquiry.
+                    Check our calendar and find a date
+                    that works for you.
+                </p>
+
+                <a
+                    href="https://script.google.com/macros/s/AKfycbwfV716-gs2TuW0avxoHM2ehsqxuSvmNR0rgbQ0fI9bzUjZaU_R7468HpkV3FqiwlXy/exec"
+                    target="_blank"
+                    class="step-link"
+                >
+                    View Calendar →
+                </a>
+
+            </div>
+
+
+            <!-- STEP 2 -->
+
+            <div class="booking-step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <div class="step-icon">
+                    💬
+                </div>
+
+                <h3>
+                    Send Us a Message
+                </h3>
+
+                <p>
+                    Message us with your preferred date,
+                    number of guests, and rentals.
+                </p>
+
+                <a
+                    href="https://m.me/floatopiawaves"
+                    target="_blank"
+                    class="step-link"
+                >
+                    Message Us →
+                </a>
+
+            </div>
+
+
+            <!-- STEP 3 -->
+
+            <div class="booking-step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <div class="step-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Confirm Your Booking
+                </h3>
+
+                <p>
+                    We'll confirm the details and guide
+                    you through the booking process.
                 </p>
 
             </div>
 
 
-            <div class="availability-card">
+            <!-- STEP 4 -->
 
-                <div class="availability-icon">
-                    📅
+            <div class="booking-step">
+
+                <div class="step-number">
+                    4
                 </div>
 
+                <div class="step-icon">
+                    🔒
+                </div>
 
                 <h3>
-                    Floatopia Calendar
+                    Secure Your Date
                 </h3>
 
-
                 <p>
-                    Check our availability calendar
-                    and find the perfect date for your trip.
+                    Pay the required booking deposit
+                    to reserve your Floatopia date.
                 </p>
-
-
-                <a
-                    href="https://script.google.com/macros/s/AKfycbwfV716-gs2TuW0avxoHM2ehsqxuSvmNR0rgbQ0fI9bzUjZaU_R7468HpkV3FqiwlXy/exec"
-                    target="_blank"
-                    class="btn btn-primary"
-                >
-                    CHECK AVAILABILITY
-                </a>
 
             </div>
 
         </div>
 
-    </section>
+
+        <div class="booking-note">
+
+            <strong>
+                💙 Ready to book?
+            </strong>
+
+            <span>
+                Check the calendar first, then send us
+                a message to get started.
+            </span>
+
+            <a
+                href="https://m.me/floatopiawaves"
+                target="_blank"
+                class="btn btn-primary"
+            >
+                BOOK NOW
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 
