@@ -506,7 +506,7 @@
 
     /* =========================
        WHAT YOUR DAY LOOKS LIKE
-       ========================= */
+    ========================= */
 
     .day-grid {
       display: grid;
@@ -678,6 +678,277 @@
     .per-person-item span {
       color: var(--muted);
       font-size: 0.75rem;
+    }
+
+    /* =========================
+       BOOKING CALCULATOR
+    ========================= */
+
+    .calculator-wrap {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .calculator-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 35px;
+      box-shadow: var(--shadow);
+    }
+
+    .calc-group {
+      margin-bottom: 28px;
+    }
+
+    .calc-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .calc-label {
+      display: block;
+      color: var(--ocean);
+      font-weight: 800;
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .calc-help {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-top: 7px;
+    }
+
+    .guest-control {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      background: var(--aqua);
+      border-radius: 16px;
+      padding: 12px;
+    }
+
+    .guest-btn {
+      width: 45px;
+      height: 45px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--ocean);
+      color: white;
+      font-size: 1.4rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .guest-btn:hover {
+      background: var(--teal);
+      transform: scale(1.05);
+    }
+
+    .guest-count {
+      text-align: center;
+      flex: 1;
+    }
+
+    .guest-count strong {
+      display: block;
+      color: var(--ocean);
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .guest-count span {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .calc-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .calc-option {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .calc-option:hover {
+      border-color: var(--teal);
+    }
+
+    .calc-option.active {
+      border-color: var(--teal);
+      background: var(--aqua);
+    }
+
+    .calc-option-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .calc-option input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--ocean);
+      margin-top: 2px;
+      cursor: pointer;
+    }
+
+    .calc-option-name {
+      color: var(--ocean);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .calc-option-price {
+      color: var(--teal);
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-top: 3px;
+    }
+
+    .calc-quantity {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .calc-option.active .calc-quantity {
+      display: flex;
+    }
+
+    .calc-quantity label {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .calc-quantity input {
+      width: 75px;
+      padding: 8px 9px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: white;
+      color: var(--text);
+      font-family: inherit;
+    }
+
+    .paddle-extra {
+      display: none;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    .calc-option.active .paddle-extra {
+      display: block;
+    }
+
+    .paddle-mode {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .paddle-mode label {
+      flex: 1;
+    }
+
+    .paddle-mode input {
+      display: none;
+    }
+
+    .paddle-mode span {
+      display: block;
+      text-align: center;
+      padding: 8px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      font-size: 0.76rem;
+      color: var(--muted);
+      cursor: pointer;
+    }
+
+    .paddle-mode input:checked + span {
+      background: var(--ocean);
+      color: white;
+      border-color: var(--ocean);
+    }
+
+    .paddle-hours {
+      display: none;
+    }
+
+    .calc-summary {
+      margin-top: 30px;
+      background: var(--ocean);
+      color: white;
+      border-radius: 20px;
+      padding: 25px;
+    }
+
+    .calc-summary-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-bottom: 15px;
+    }
+
+    .calc-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 7px 0;
+      font-size: 0.88rem;
+    }
+
+    .calc-line span:first-child {
+      opacity: 0.82;
+    }
+
+    .calc-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      border-top: 1px solid rgba(255,255,255,0.22);
+      margin-top: 12px;
+      padding-top: 17px;
+    }
+
+    .calc-total > div > span {
+      display: block;
+      font-size: 0.85rem;
+    }
+
+    .calc-total strong {
+      font-size: 1.8rem;
+    }
+
+    .calc-per-person {
+      font-size: 0.78rem;
+      opacity: 0.75;
+      margin-top: 2px;
+    }
+
+    .calc-messenger {
+      width: 100%;
+      margin-top: 18px;
+      background: white;
+      color: var(--ocean);
+    }
+
+    .calc-messenger:hover {
+      background: var(--aqua);
     }
 
     /* =========================
@@ -1234,6 +1505,19 @@
         grid-template-columns: 1fr;
       }
 
+      .calculator-card {
+        padding: 22px 16px;
+        border-radius: 22px;
+      }
+
+      .calc-options {
+        grid-template-columns: 1fr;
+      }
+
+      .calc-total strong {
+        font-size: 1.5rem;
+      }
+
       .gallery-grid {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 230px 170px;
@@ -1253,7 +1537,6 @@
         text-align: center;
       }
 
-      /* Mobile Messenger moves above booking bar */
       .messenger-float {
         right: 16px;
         bottom: 82px;
@@ -1408,12 +1691,13 @@
           </div>
 
           <div class="hero-details">
-            <div class="hero-detail">👥 Up to 25 guests</div>
+            <div class="hero-detail">👥 25 guests included</div>
             <div class="hero-detail">⏰ 8 AM – 4 PM</div>
             <div class="hero-detail">📍 Samal Island</div>
           </div>
 
           <div class="hero-buttons">
+
             <a
               href="#booking"
               class="btn btn-primary"
@@ -1428,6 +1712,7 @@
             >
               Check Availability
             </a>
+
           </div>
 
           <p class="deposit-note">
@@ -1465,7 +1750,7 @@
 
         <div class="quick-item">
           <strong>25 Guests</strong>
-          <span>Maximum capacity</span>
+          <span>Included, ₱100 each extra</span>
         </div>
 
         <div class="quick-item">
@@ -1491,7 +1776,10 @@
 
         <div class="about-box">
           <div class="about-box-inner">
-            <div class="about-box-icon">🌊</div>
+
+            <div class="about-box-icon">
+              🌊
+            </div>
 
             <h3>
               Good days float here.
@@ -1501,6 +1789,7 @@
               A simple place to slow down, enjoy the water,
               and spend quality time with your people.
             </p>
+
           </div>
         </div>
 
@@ -1559,7 +1848,11 @@
 
           <div class="amenity-card reveal">
             <div class="amenity-icon">🏊</div>
-            <h3>Mini Pool</h3>
+
+            <h3>
+              Mini Pool
+            </h3>
+
             <p>
               For those who want to cool down without
               leaving the cottage.
@@ -1568,7 +1861,11 @@
 
           <div class="amenity-card reveal">
             <div class="amenity-icon">💦</div>
-            <h3>Blue Water Slide</h3>
+
+            <h3>
+              Blue Water Slide
+            </h3>
+
             <p>
               Because apparently jumping into the water
               isn't enough.
@@ -1577,7 +1874,11 @@
 
           <div class="amenity-card reveal">
             <div class="amenity-icon">🚻</div>
-            <h3>Clean CR</h3>
+
+            <h3>
+              Clean CR
+            </h3>
+
             <p>
               A clean and convenient restroom
               available during your stay.
@@ -1617,38 +1918,107 @@
         <div class="rentals-grid">
 
           <div class="rental-card reveal">
-            <div class="rental-icon">🎤</div>
-            <h3>Mini Videoke</h3>
-            <div class="rental-price">₱300</div>
-            <p>Sing it. No judgment.</p>
+
+            <div class="rental-icon">
+              🎤
+            </div>
+
+            <h3>
+              Mini Videoke
+            </h3>
+
+            <div class="rental-price">
+              ₱300
+            </div>
+
+            <p>
+              Sing it. No judgment.
+            </p>
+
           </div>
 
-          <div class="rental-card reveal">
-            <div class="rental-icon">📷</div>
-            <h3>Underwater Camera</h3>
-            <div class="rental-price">₱500 / battery</div>
-            <p>Around 1–2 hours battery.</p>
-          </div>
 
           <div class="rental-card reveal">
-            <div class="rental-icon">🚁</div>
-            <h3>Drone Rental</h3>
-            <div class="rental-price">₱500</div>
-            <p>10–15 mins total clips.</p>
+
+            <div class="rental-icon">
+              📷
+            </div>
+
+            <h3>
+              Underwater Camera
+            </h3>
+
+            <div class="rental-price">
+              ₱500 / battery
+            </div>
+
+            <p>
+              Around 1–2 hours battery.
+            </p>
+
           </div>
 
-          <div class="rental-card reveal">
-            <div class="rental-icon">🏄</div>
-            <h3>Paddle Board</h3>
-            <div class="rental-price">₱300 / hour</div>
-            <p>Float, paddle, repeat.</p>
-          </div>
 
           <div class="rental-card reveal">
-            <div class="rental-icon">🤿</div>
-            <h3>Snorkel</h3>
-            <div class="rental-price">₱150 / day</div>
-            <p>Explore what's underneath.</p>
+
+            <div class="rental-icon">
+              🚁
+            </div>
+
+            <h3>
+              Drone Rental
+            </h3>
+
+            <div class="rental-price">
+              ₱500
+            </div>
+
+            <p>
+              10–15 mins total clips.
+            </p>
+
+          </div>
+
+
+          <div class="rental-card reveal">
+
+            <div class="rental-icon">
+              🏄
+            </div>
+
+            <h3>
+              Paddle Board
+            </h3>
+
+            <div class="rental-price">
+              ₱300 / hour
+            </div>
+
+            <p>
+              ₱1,000 whole day. Float, paddle, repeat.
+            </p>
+
+          </div>
+
+
+          <div class="rental-card reveal">
+
+            <div class="rental-icon">
+              🤿
+            </div>
+
+            <h3>
+              Snorkel
+            </h3>
+
+            <div class="rental-price">
+              ₱150 / day
+            </div>
+
+            <p>
+              Explore what's underneath.
+            </p>
+
           </div>
 
         </div>
@@ -1684,39 +2054,74 @@
         <div class="day-grid">
 
           <div class="day-card reveal">
-            <div class="day-number">01 • ARRIVE</div>
-            <h3>Settle In</h3>
+
+            <div class="day-number">
+              01 • ARRIVE
+            </div>
+
+            <h3>
+              Settle In
+            </h3>
+
             <p>
               Get comfortable, unpack the food,
               pick your favorite spot and enjoy the view.
             </p>
+
           </div>
 
+
           <div class="day-card reveal">
-            <div class="day-number">02 • GET WET</div>
-            <h3>Swim & Explore</h3>
+
+            <div class="day-number">
+              02 • GET WET
+            </div>
+
+            <h3>
+              Swim & Explore
+            </h3>
+
             <p>
               Jump in the water, use the slide,
               snorkel or try the paddle board.
             </p>
+
           </div>
 
+
           <div class="day-card reveal">
-            <div class="day-number">03 • GOOD VIBES</div>
-            <h3>Eat, Sing & Chill</h3>
+
+            <div class="day-number">
+              03 • GOOD VIBES
+            </div>
+
+            <h3>
+              Eat, Sing & Chill
+            </h3>
+
             <p>
               Bring the food, turn on the videoke,
               talk nonsense and enjoy the day.
             </p>
+
           </div>
 
+
           <div class="day-card reveal">
-            <div class="day-number">04 • MAKE MEMORIES</div>
-            <h3>Take Too Many Photos</h3>
+
+            <div class="day-number">
+              04 • MAKE MEMORIES
+            </div>
+
+            <h3>
+              Take Too Many Photos
+            </h3>
+
             <p>
               Drone shots, underwater photos,
               group selfies, everything counts.
             </p>
+
           </div>
 
         </div>
@@ -1753,39 +2158,63 @@
 
           <div class="perfect-card reveal">
             <div class="emoji">👨‍👩‍👧‍👦</div>
-            <h3>Family Day</h3>
+
+            <h3>
+              Family Day
+            </h3>
+
             <p>
               Quality time away from the usual routine.
             </p>
           </div>
 
+
           <div class="perfect-card reveal">
             <div class="emoji">🎂</div>
-            <h3>Birthday Hangout</h3>
+
+            <h3>
+              Birthday Hangout
+            </h3>
+
             <p>
               Celebrate with water, food and good vibes.
             </p>
           </div>
 
+
           <div class="perfect-card reveal">
             <div class="emoji">🍻</div>
-            <h3>Barkada Day</h3>
+
+            <h3>
+              Barkada Day
+            </h3>
+
             <p>
               The group chat finally made it outside.
             </p>
           </div>
 
+
           <div class="perfect-card reveal">
             <div class="emoji">💙</div>
-            <h3>Couples & Friends</h3>
+
+            <h3>
+              Couples & Friends
+            </h3>
+
             <p>
               Chill, swim and make the day count.
             </p>
           </div>
 
+
           <div class="perfect-card reveal">
             <div class="emoji">🤝</div>
-            <h3>Team Bonding</h3>
+
+            <h3>
+              Team Bonding
+            </h3>
+
             <p>
               A different kind of team meeting.
             </p>
@@ -1841,7 +2270,11 @@
             <div class="price-features">
 
               <div class="price-feature">
-                👥 Up to 25 guests
+                👥 25 guests included
+              </div>
+
+              <div class="price-feature">
+                ➕ ₱100 per extra guest
               </div>
 
               <div class="price-feature">
@@ -1854,6 +2287,10 @@
 
               <div class="price-feature">
                 🚻 Clean CR
+              </div>
+
+              <div class="price-feature">
+                🌊 Whole-day cottage use
               </div>
 
             </div>
@@ -1891,9 +2328,14 @@
             </div>
 
             <div style="margin-top:28px;">
-              <a href="#booking" class="btn btn-primary">
-                Check Your Date
+
+              <a
+                href="#calculator"
+                class="btn btn-primary"
+              >
+                Calculate Your Total
               </a>
+
             </div>
 
           </div>
@@ -1901,6 +2343,437 @@
         </div>
 
       </div>
+    </section>
+
+
+    <!-- =========================
+         BOOKING CALCULATOR
+    ========================= -->
+
+    <section id="calculator">
+
+      <div class="container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            Plan your Floatopia day
+          </div>
+
+          <h2>
+            See your estimated total.
+          </h2>
+
+          <p>
+            Choose your group size and any extras you want.
+            We'll calculate the estimated cost for you.
+          </p>
+
+        </div>
+
+        <div class="calculator-wrap">
+
+          <div class="calculator-card reveal">
+
+            <!-- GUESTS -->
+
+            <div class="calc-group">
+
+              <label class="calc-label">
+                👥 How many guests?
+              </label>
+
+              <div class="guest-control">
+
+                <button
+                  type="button"
+                  class="guest-btn"
+                  onclick="changeGuests(-1)"
+                >
+                  −
+                </button>
+
+                <div class="guest-count">
+
+                  <strong id="guestCount">
+                    10
+                  </strong>
+
+                  <span>
+                    guests
+                  </span>
+
+                </div>
+
+                <button
+                  type="button"
+                  class="guest-btn"
+                  onclick="changeGuests(1)"
+                >
+                  +
+                </button>
+
+              </div>
+
+              <div class="calc-help">
+                Up to 25 guests are included.
+                Additional guests are ₱100 each.
+              </div>
+
+            </div>
+
+
+            <!-- OPTIONAL RENTALS -->
+
+            <div class="calc-group">
+
+              <label class="calc-label">
+                🌊 Add optional rentals
+              </label>
+
+              <div class="calc-options">
+
+
+                <!-- VIDEOKE -->
+
+                <div
+                  class="calc-option"
+                  id="optionVideoke"
+                >
+
+                  <div class="calc-option-top">
+
+                    <input
+                      type="checkbox"
+                      id="videoke"
+                      onchange="toggleOption('optionVideoke')"
+                    >
+
+                    <div>
+
+                      <div class="calc-option-name">
+                        🎤 Mini Videoke
+                      </div>
+
+                      <div class="calc-option-price">
+                        ₱300 / booking
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- CAMERA -->
+
+                <div
+                  class="calc-option"
+                  id="optionCamera"
+                >
+
+                  <div class="calc-option-top">
+
+                    <input
+                      type="checkbox"
+                      id="camera"
+                      onchange="toggleOption('optionCamera')"
+                    >
+
+                    <div>
+
+                      <div class="calc-option-name">
+                        📷 Underwater Camera
+                      </div>
+
+                      <div class="calc-option-price">
+                        ₱500 / battery
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="calc-quantity">
+
+                    <label>
+                      Batteries:
+                    </label>
+
+                    <input
+                      type="number"
+                      id="cameraQty"
+                      value="1"
+                      min="1"
+                      max="5"
+                      onchange="updateCalculator()"
+                    >
+
+                  </div>
+
+                </div>
+
+
+                <!-- DRONE -->
+
+                <div
+                  class="calc-option"
+                  id="optionDrone"
+                >
+
+                  <div class="calc-option-top">
+
+                    <input
+                      type="checkbox"
+                      id="drone"
+                      onchange="toggleOption('optionDrone')"
+                    >
+
+                    <div>
+
+                      <div class="calc-option-name">
+                        🚁 Drone Rental
+                      </div>
+
+                      <div class="calc-option-price">
+                        ₱500 / booking
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- PADDLE BOARD -->
+
+                <div
+                  class="calc-option"
+                  id="optionPaddle"
+                >
+
+                  <div class="calc-option-top">
+
+                    <input
+                      type="checkbox"
+                      id="paddle"
+                      onchange="toggleOption('optionPaddle'); updatePaddleOptions()"
+                    >
+
+                    <div>
+
+                      <div class="calc-option-name">
+                        🏄 Paddle Board
+                      </div>
+
+                      <div class="calc-option-price">
+                        ₱300 / hour or ₱1,000 whole day
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="paddle-extra">
+
+                    <div class="paddle-mode">
+
+                      <label>
+
+                        <input
+                          type="radio"
+                          name="paddleMode"
+                          value="hour"
+                          checked
+                          onchange="updatePaddleOptions()"
+                        >
+
+                        <span>
+                          ₱300 / hour
+                        </span>
+
+                      </label>
+
+                      <label>
+
+                        <input
+                          type="radio"
+                          name="paddleMode"
+                          value="day"
+                          onchange="updatePaddleOptions()"
+                        >
+
+                        <span>
+                          ₱1,000 / day
+                        </span>
+
+                      </label>
+
+                    </div>
+
+
+                    <div class="calc-quantity">
+
+                      <label>
+                        Boards:
+                      </label>
+
+                      <input
+                        type="number"
+                        id="paddleQty"
+                        value="1"
+                        min="1"
+                        max="10"
+                        onchange="updateCalculator()"
+                      >
+
+                    </div>
+
+
+                    <div
+                      class="calc-quantity paddle-hours"
+                      id="paddleHoursWrap"
+                    >
+
+                      <label>
+                        Hours:
+                      </label>
+
+                      <input
+                        type="number"
+                        id="paddleHours"
+                        value="1"
+                        min="1"
+                        max="8"
+                        onchange="updateCalculator()"
+                      >
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- SNORKEL -->
+
+                <div
+                  class="calc-option"
+                  id="optionSnorkel"
+                >
+
+                  <div class="calc-option-top">
+
+                    <input
+                      type="checkbox"
+                      id="snorkel"
+                      onchange="toggleOption('optionSnorkel')"
+                    >
+
+                    <div>
+
+                      <div class="calc-option-name">
+                        🤿 Snorkel
+                      </div>
+
+                      <div class="calc-option-price">
+                        ₱150 / person
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="calc-quantity">
+
+                    <label>
+                      People:
+                    </label>
+
+                    <input
+                      type="number"
+                      id="snorkelQty"
+                      value="1"
+                      min="1"
+                      max="10"
+                      onchange="updateCalculator()"
+                    >
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="calc-summary">
+
+              <div class="calc-summary-title">
+                Estimated booking total
+              </div>
+
+              <div id="calcBreakdown">
+
+                <div class="calc-line">
+
+                  <span>
+                    Cottage
+                  </span>
+
+                  <strong>
+                    ₱4,500
+                  </strong>
+
+                </div>
+
+              </div>
+
+              <div class="calc-total">
+
+                <div>
+
+                  <span>
+                    Estimated total
+                  </span>
+
+                  <div
+                    class="calc-per-person"
+                    id="calcPerPerson"
+                  >
+                    ₱450 per person
+                  </div>
+
+                </div>
+
+                <strong id="calcTotal">
+                  ₱4,500
+                </strong>
+
+              </div>
+
+              <a
+                href="https://m.me/floatopiawaves"
+                target="_blank"
+                class="btn calc-messenger"
+                id="calcMessenger"
+              >
+                💬 Inquire About This Booking
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
 
 
@@ -2084,12 +2957,31 @@
         </p>
 
         <div class="signature-vibes">
-          <span>🌊 Swim</span>
-          <span>😂 Laugh</span>
-          <span>🍴 Eat</span>
-          <span>🎤 Sing</span>
-          <span>📸 Take photos</span>
-          <span>💙 Make memories</span>
+
+          <span>
+            🌊 Swim
+          </span>
+
+          <span>
+            😂 Laugh
+          </span>
+
+          <span>
+            🍴 Eat
+          </span>
+
+          <span>
+            🎤 Sing
+          </span>
+
+          <span>
+            📸 Take photos
+          </span>
+
+          <span>
+            💙 Make memories
+          </span>
+
         </div>
 
       </div>
@@ -2124,38 +3016,48 @@
         <div class="gallery-grid">
 
           <div class="gallery-item">
+
             <img
               src="floating-cottage.jpg"
               alt="Floatopia Waves Floating Cottage"
             >
+
           </div>
 
           <div class="gallery-item">
+
             <span>
               📸<br>
               Cottage & group photos
             </span>
+
           </div>
 
           <div class="gallery-item">
+
             <span>
               🌊<br>
               Water & snorkeling
             </span>
+
           </div>
 
           <div class="gallery-item">
+
             <span>
               🏄<br>
               Paddle board
             </span>
+
           </div>
 
           <div class="gallery-item">
+
             <span>
               💦<br>
               Water slide & fun
             </span>
+
           </div>
 
         </div>
@@ -2341,30 +3243,36 @@
         <div class="faq reveal">
 
           <details>
+
             <summary>
               How much is the cottage?
             </summary>
 
             <p>
-              The cottage rental is ₱4,500 for 8 AM to 4 PM.
-              Maximum capacity is 25 guests.
+              The cottage rental is ₱4,500 for 8 AM to 4 PM,
+              which includes up to 25 guests. Additional guests
+              are ₱100 each.
             </p>
+
           </details>
 
 
           <details>
+
             <summary>
               How many people can join?
             </summary>
 
             <p>
-              The cottage can accommodate up to 25 guests.
+              The cottage includes up to 25 guests.
               Additional guests are ₱100 each.
             </p>
+
           </details>
 
 
           <details>
+
             <summary>
               What time is the booking?
             </summary>
@@ -2372,10 +3280,12 @@
             <p>
               Regular cottage hours are from 8:00 AM to 4:00 PM.
             </p>
+
           </details>
 
 
           <details>
+
             <summary>
               Is there a booking deposit?
             </summary>
@@ -2384,10 +3294,12 @@
               Yes. A booking deposit of ₱1,000–₱2,000 is required
               to secure your date.
             </p>
+
           </details>
 
 
           <details>
+
             <summary>
               What can we rent?
             </summary>
@@ -2396,10 +3308,12 @@
               Optional rentals include mini videoke, underwater camera,
               drone, paddle board and snorkels.
             </p>
+
           </details>
 
 
           <details>
+
             <summary>
               How do I book?
             </summary>
@@ -2408,6 +3322,7 @@
               Check the availability calendar first, then message us
               through Messenger with your preferred date and group details.
             </p>
+
           </details>
 
         </div>
@@ -2528,6 +3443,7 @@
     const navLinks = document.getElementById("navLinks");
 
     menuToggle.addEventListener("click", function () {
+
       navLinks.classList.toggle("active");
 
       if (navLinks.classList.contains("active")) {
@@ -2535,10 +3451,9 @@
       } else {
         menuToggle.textContent = "☰";
       }
+
     });
 
-
-    /* Close mobile menu after clicking a link */
 
     document.querySelectorAll(".nav-links a").forEach(function(link) {
 
@@ -2583,6 +3498,560 @@
     revealElements.forEach(function(element) {
       revealObserver.observe(element);
     });
+
+
+    /* =========================
+       BOOKING CALCULATOR
+    ========================= */
+
+    const COTTAGE_PRICE = 4500;
+    const INCLUDED_GUESTS = 25;
+    const EXTRA_GUEST_PRICE = 100;
+
+    const VIDEOKE_PRICE = 300;
+    const CAMERA_PRICE = 500;
+    const DRONE_PRICE = 500;
+
+    const PADDLE_HOUR_PRICE = 300;
+    const PADDLE_DAY_PRICE = 1000;
+
+    const SNORKEL_PRICE = 150;
+
+    let guests = 10;
+
+
+    /* =========================
+       FORMAT PESO
+    ========================= */
+
+    function peso(amount) {
+
+      return "₱" + amount.toLocaleString("en-PH");
+
+    }
+
+
+    /* =========================
+       CHANGE GUEST COUNT
+    ========================= */
+
+    function changeGuests(amount) {
+
+      guests += amount;
+
+      if (guests < 1) {
+        guests = 1;
+      }
+
+      if (guests > 50) {
+        guests = 50;
+      }
+
+      document.getElementById("guestCount").textContent = guests;
+
+      const snorkelQty =
+        document.getElementById("snorkelQty");
+
+      if (snorkelQty) {
+
+        snorkelQty.max = guests;
+
+        if (parseInt(snorkelQty.value) > guests) {
+          snorkelQty.value = guests;
+        }
+
+      }
+
+      updateCalculator();
+
+    }
+
+
+    /* =========================
+       TOGGLE RENTAL
+    ========================= */
+
+    function toggleOption(optionId) {
+
+      const option =
+        document.getElementById(optionId);
+
+      const checkbox =
+        option.querySelector(
+          "input[type='checkbox']"
+        );
+
+      if (checkbox.checked) {
+        option.classList.add("active");
+      } else {
+        option.classList.remove("active");
+      }
+
+      updateCalculator();
+
+    }
+
+
+    /* =========================
+       PADDLE BOARD OPTIONS
+    ========================= */
+
+    function updatePaddleOptions() {
+
+      const selectedMode =
+        document.querySelector(
+          "input[name='paddleMode']:checked"
+        );
+
+      if (!selectedMode) {
+        return;
+      }
+
+      const mode =
+        selectedMode.value;
+
+      const hoursWrap =
+        document.getElementById("paddleHoursWrap");
+
+      if (mode === "hour") {
+        hoursWrap.style.display = "flex";
+      } else {
+        hoursWrap.style.display = "none";
+      }
+
+      updateCalculator();
+
+    }
+
+
+    /* =========================
+       CALCULATE TOTAL
+    ========================= */
+
+    function updateCalculator() {
+
+      const breakdown =
+        document.getElementById("calcBreakdown");
+
+      let total = COTTAGE_PRICE;
+
+      let html = `
+        <div class="calc-line">
+          <span>Cottage</span>
+          <strong>${peso(COTTAGE_PRICE)}</strong>
+        </div>
+      `;
+
+
+      /* =========================
+         EXTRA GUESTS
+      ========================= */
+
+      const extraGuests =
+        Math.max(
+          0,
+          guests - INCLUDED_GUESTS
+        );
+
+      if (extraGuests > 0) {
+
+        const extraGuestCost =
+          extraGuests * EXTRA_GUEST_PRICE;
+
+        total += extraGuestCost;
+
+        html += `
+          <div class="calc-line">
+            <span>
+              Extra guests (${extraGuests})
+            </span>
+            <strong>
+              ${peso(extraGuestCost)}
+            </strong>
+          </div>
+        `;
+
+      }
+
+
+      /* =========================
+         VIDEOKE
+      ========================= */
+
+      const videoke =
+        document.getElementById("videoke").checked;
+
+      if (videoke) {
+
+        total += VIDEOKE_PRICE;
+
+        html += `
+          <div class="calc-line">
+            <span>
+              Mini Videoke
+            </span>
+            <strong>
+              ${peso(VIDEOKE_PRICE)}
+            </strong>
+          </div>
+        `;
+
+      }
+
+
+      /* =========================
+         UNDERWATER CAMERA
+      ========================= */
+
+      const camera =
+        document.getElementById("camera").checked;
+
+      if (camera) {
+
+        const qty = Math.max(
+          1,
+          Math.min(
+            5,
+            parseInt(
+              document.getElementById("cameraQty").value
+            ) || 1
+          )
+        );
+
+        document.getElementById("cameraQty").value = qty;
+
+        const cost =
+          qty * CAMERA_PRICE;
+
+        total += cost;
+
+        html += `
+          <div class="calc-line">
+            <span>
+              Underwater Camera (${qty} battery)
+            </span>
+            <strong>
+              ${peso(cost)}
+            </strong>
+          </div>
+        `;
+
+      }
+
+
+      /* =========================
+         DRONE
+      ========================= */
+
+      const drone =
+        document.getElementById("drone").checked;
+
+      if (drone) {
+
+        total += DRONE_PRICE;
+
+        html += `
+          <div class="calc-line">
+            <span>
+              Drone Rental
+            </span>
+            <strong>
+              ${peso(DRONE_PRICE)}
+            </strong>
+          </div>
+        `;
+
+      }
+
+
+      /* =========================
+         PADDLE BOARD
+      ========================= */
+
+      const paddle =
+        document.getElementById("paddle").checked;
+
+      let paddleDetails = "";
+
+      if (paddle) {
+
+        const qty = Math.max(
+          1,
+          Math.min(
+            10,
+            parseInt(
+              document.getElementById("paddleQty").value
+            ) || 1
+          )
+        );
+
+        document.getElementById("paddleQty").value = qty;
+
+        const selectedMode =
+          document.querySelector(
+            "input[name='paddleMode']:checked"
+          );
+
+        const mode =
+          selectedMode ? selectedMode.value : "hour";
+
+        let cost = 0;
+
+        if (mode === "hour") {
+
+          const hours = Math.max(
+            1,
+            Math.min(
+              8,
+              parseInt(
+                document.getElementById("paddleHours").value
+              ) || 1
+            )
+          );
+
+          document.getElementById("paddleHours").value =
+            hours;
+
+          cost =
+            PADDLE_HOUR_PRICE *
+            hours *
+            qty;
+
+          paddleDetails =
+            `${qty} board × ${hours} hour`;
+
+        } else {
+
+          cost =
+            PADDLE_DAY_PRICE *
+            qty;
+
+          paddleDetails =
+            `${qty} board × whole day`;
+
+        }
+
+        total += cost;
+
+        html += `
+          <div class="calc-line">
+            <span>
+              Paddle Board (${paddleDetails})
+            </span>
+            <strong>
+              ${peso(cost)}
+            </strong>
+          </div>
+        `;
+
+      }
+
+
+      /* =========================
+         SNORKEL
+      ========================= */
+
+      const snorkel =
+        document.getElementById("snorkel").checked;
+
+      if (snorkel) {
+
+        let qty = Math.max(
+          1,
+          parseInt(
+            document.getElementById("snorkelQty").value
+          ) || 1
+        );
+
+        if (qty > guests) {
+          qty = guests;
+        }
+
+        document.getElementById("snorkelQty").value =
+          qty;
+
+        const cost =
+          qty * SNORKEL_PRICE;
+
+        total += cost;
+
+        html += `
+          <div class="calc-line">
+            <span>
+              Snorkel (${qty} person)
+            </span>
+            <strong>
+              ${peso(cost)}
+            </strong>
+          </div>
+        `;
+
+      }
+
+
+      /* =========================
+         UPDATE SUMMARY
+      ========================= */
+
+      breakdown.innerHTML = html;
+
+      document.getElementById("calcTotal").textContent =
+        peso(total);
+
+
+      const perPerson =
+        Math.ceil(total / guests);
+
+      document.getElementById("calcPerPerson").textContent =
+        peso(perPerson) + " per person";
+
+
+      /* =========================
+         MESSENGER MESSAGE
+      ========================= */
+
+      let message =
+        "Hi Floatopia Waves! 🌊\n\n" +
+        "I'd like to inquire about a booking.\n\n" +
+        "👥 Guests: " + guests + "\n";
+
+
+      if (extraGuests > 0) {
+
+        message +=
+          "➕ Extra guests: " +
+          extraGuests +
+          "\n";
+
+      }
+
+
+      if (videoke) {
+
+        message +=
+          "🎤 Mini Videoke\n";
+
+      }
+
+
+      if (camera) {
+
+        const qty =
+          parseInt(
+            document.getElementById("cameraQty").value
+          ) || 1;
+
+        message +=
+          "📷 Underwater Camera: " +
+          qty +
+          " battery\n";
+
+      }
+
+
+      if (drone) {
+
+        message +=
+          "🚁 Drone Rental\n";
+
+      }
+
+
+      if (paddle) {
+
+        const qty =
+          parseInt(
+            document.getElementById("paddleQty").value
+          ) || 1;
+
+        const selectedMode =
+          document.querySelector(
+            "input[name='paddleMode']:checked"
+          );
+
+        const mode =
+          selectedMode ? selectedMode.value : "hour";
+
+        if (mode === "hour") {
+
+          const hours =
+            parseInt(
+              document.getElementById("paddleHours").value
+            ) || 1;
+
+          message +=
+            "🏄 Paddle Board: " +
+            qty +
+            " board × " +
+            hours +
+            " hour\n";
+
+        } else {
+
+          message +=
+            "🏄 Paddle Board: " +
+            qty +
+            " board × whole day\n";
+
+        }
+
+      }
+
+
+      if (snorkel) {
+
+        const qty =
+          parseInt(
+            document.getElementById("snorkelQty").value
+          ) || 1;
+
+        message +=
+          "🤿 Snorkel: " +
+          qty +
+          " person\n";
+
+      }
+
+
+      message +=
+        "\n💰 Estimated total: " +
+        peso(total) +
+        "\n" +
+        "👤 Estimated per person: " +
+        peso(perPerson) +
+        "\n\n" +
+        "Please let me know the available dates. Thank you!";
+
+
+      document.getElementById("calcMessenger").href =
+        "https://m.me/floatopiawaves?text=" +
+        encodeURIComponent(message);
+
+    }
+
+
+    /* =========================
+       INITIALIZE CALCULATOR
+    ========================= */
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function() {
+
+        document.getElementById(
+          "guestCount"
+        ).textContent = guests;
+
+        document.getElementById(
+          "snorkelQty"
+        ).max = guests;
+
+        updatePaddleOptions();
+
+        updateCalculator();
+
+      }
+    );
 
   </script>
 
