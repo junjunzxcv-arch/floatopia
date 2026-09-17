@@ -387,23 +387,29 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 35px;
+      padding: 18px;
       text-align: center;
+      overflow: hidden;
     }
 
-    .about-box-inner {
-      max-width: 330px;
+    /* =========================
+       ABOUT VIDEO
+    ========================= */
+
+    .about-video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 12px 30px rgba(7,94,104,0.12);
     }
 
-    .about-box-icon {
-      font-size: 4rem;
-      margin-bottom: 18px;
-    }
-
-    .about-box h3 {
-      font-size: 1.7rem;
-      color: var(--ocean);
-      margin-bottom: 8px;
+    .about-video iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: 0;
     }
 
     .about-content h2 {
@@ -1518,6 +1524,15 @@
         font-size: 1.5rem;
       }
 
+      .about-box {
+        min-height: auto;
+        padding: 12px;
+      }
+
+      .about-video {
+        border-radius: 17px;
+      }
+
       .gallery-grid {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 230px 170px;
@@ -1774,24 +1789,23 @@
     <section id="about">
       <div class="container about-grid reveal">
 
+        <!-- YOUTUBE VIDEO REPLACEMENT -->
+
         <div class="about-box">
-          <div class="about-box-inner">
 
-            <div class="about-box-icon">
-              🌊
-            </div>
+          <div class="about-video">
 
-            <h3>
-              Good days float here.
-            </h3>
-
-            <p>
-              A simple place to slow down, enjoy the water,
-              and spend quality time with your people.
-            </p>
+            <iframe
+              src="https://www.youtube.com/embed/ffSpa80ndH8"
+              title="Floatopia Waves"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
 
           </div>
+
         </div>
+
 
         <div class="about-content">
 
